@@ -644,3 +644,46 @@
 //     () => alert('You are agreed!'),
 //     () => alert('You have canceled!')
 // );
+
+
+// # Lesson 26 Function and Arguments
+
+// const usdCurr = 89;
+// const eurCurr = 90;
+
+// function convert(amount, curr) {
+//     console.log(curr * amount);
+// }
+// convert(500, usdCurr)
+// convert(500, eurCurr)
+
+
+// # Lesson 27 Function and Return
+
+const usdCurr = 89;
+const discount = 0.1;
+
+const convert = (amount, curr) => {
+    if(typeof amount !== "number" || isNaN(amount) || !amount) {
+        alert('Please insert only numbers!');
+        return; // Прерываем выполнение функции, если тип amount не является числом или равен NaN
+    }
+        return curr * amount; // а так возвращай нам это
+}
+
+let a = 0
+const promotion = (result) => {
+    a = result * discount
+    console.log(`The additional promotion amount is ${a}`);
+}
+
+const res = convert(Number(prompt('insert your amount', '')), usdCurr); // вызываем функцию convert = (amount, curr) amount запращиваем у пользователя.
+
+promotion(res); // вызываем функцию promotion = (result) всесто аргумента result идет значение константы res 
+
+const summaryRes = res + a;
+
+console.log(`The original amount is ${res}`);
+console.log(`Your summary amount is ${summaryRes}`);
+
+
