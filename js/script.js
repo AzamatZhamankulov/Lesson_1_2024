@@ -677,7 +677,7 @@ const promotion = (result) => {
     console.log(`The additional promotion amount is ${a}`);
 }
 
-const res = convert(Number(prompt('insert your amount', '')), usdCurr); // вызываем функцию convert = (amount, curr) amount запращиваем у пользователя.
+const res = convert(+prompt('insert your amount', ''), usdCurr); // вызываем функцию convert = (amount, curr) amount запращиваем у пользователя.
 
 promotion(res); // вызываем функцию promotion = (result) всесто аргумента result идет значение константы res 
 
