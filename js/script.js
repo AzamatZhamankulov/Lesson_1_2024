@@ -658,32 +658,186 @@
 // convert(500, eurCurr)
 
 
+//******************************* */
+
 // # Lesson 27 Function and Return
 
-const usdCurr = 89;
-const discount = 0.1;
+// const usdCurr = 89;
+// const discount = 0.1;
 
-const convert = (amount, curr) => {
-    if(typeof amount !== "number" || isNaN(amount) || !amount) {
-        alert('Please insert only numbers!');
-        return; // Прерываем выполнение функции, если тип amount не является числом или равен NaN
-    }
-        return curr * amount; // а так возвращай нам это
-}
+// const convert = (amount, curr) => {
+//     if(typeof amount !== "number" || isNaN(amount) || !amount) {
+//         alert('Please insert only numbers!');
+//         return; // Прерываем выполнение функции, если тип amount не является числом или равен NaN
+//     }
+//         return curr * amount; // а так возвращай нам это
+// }
 
-let a = 0
-const promotion = (result) => {
-    a = result * discount
-    console.log(`The additional promotion amount is ${a}`);
-}
+// let a = 0
+// const promotion = (result) => {
+//     a = result * discount
+//     console.log(`The additional promotion amount is ${a}`);
+// }
 
-const res = convert(+prompt('insert your amount', ''), usdCurr); // вызываем функцию convert = (amount, curr) amount запращиваем у пользователя.
+// const res = convert(+prompt('insert your amount', ''), usdCurr); // вызываем функцию convert = (amount, curr) amount запращиваем у пользователя.
 
-promotion(res); // вызываем функцию promotion = (result) всесто аргумента result идет значение константы res 
+// promotion(res); // вызываем функцию promotion = (result) всесто аргумента result идет значение константы res 
 
-const summaryRes = res + a;
+// const summaryRes = res + a;
 
-console.log(`The original amount is ${res}`);
-console.log(`Your summary amount is ${summaryRes}`);
+// console.log(`The original amount is ${res}`);
+// console.log(`Your summary amount is ${summaryRes}`);
+
+//******************************* */
 
 
+// # Lesson 28 Function and Return practice
+// excercise #1: 1) Создайте функцию, которая будет на вход принимать 1 аргумент
+// с именем человека и возвращать строку. Пример: вызов функции sayHello('Антон')
+// возвращает строку "Привет, Антон!".
+
+// const sayHello = (name) => {
+//     let res = `Hello ${name}`
+//     console.log(res);
+//     return res;
+// }
+// sayHello('azaMaza');
+
+
+// excercise #2: 2) Создайте функцию, которая принимает в себя 1 аргумент в виде
+// целого числа и возвращает массив из трех чисел: одно на 1 меньше, сам аргумент,
+// и число на 1 больше. Пример: вызов функции returnNeighboringNumbers(5)
+// возвращает массив в виде [4, 5, 6].
+
+// const returnNeighboringNumbers = (a) => {
+//     let arr = [a - 1, a, a + 1];
+//     console.log(arr);
+//     return arr;
+// }
+// returnNeighboringNumbers(6);
+
+//******************************* */
+
+// const returnNeighboringNumbers = (num) => {
+//     if (typeof num !== 'number' || !Number.isInteger(num)) {
+//         throw new Error('The argument must be an integer');
+//     }
+
+//     return [num - 1, num, num + 1];
+// }
+// // Пример использования:
+// const result = returnNeighboringNumbers(5);
+// console.log(result); // Вывод: [4, 5, 6]
+
+//******************************* */
+
+
+// excercise #2: 3) Создайте функцию, которая будет принимать в себя 2 аргумента, оба числа. Первое число - это база,
+// второе число - это сколько раз нужно будет повторить это число в прогрессии.
+// (Смотри пример ниже). Функция должна возвращать строку (или число в особых случаях,
+// о которых ниже), где эти числа идут по порядку, разделенные тремя дефисами "---".
+// После последнего числа их не должно быть. Если второй аргумент не является числом,
+// равен или меньше нуля - то возвращать просто первый аргумент. (Проверяем через
+// оператор typeof) Примеры:
+// Вызов функции getMathResult(5, 3) даст ответ 5---10---15
+// Вызов функции getMathResult(3, 10) даст ответ 3---6---9---12---15---18---21---24---27---30
+// Вызов функции getMathResult(10, 5) даст ответ 10---20---30---40---50
+// Вызов функции getMathResult(10, '5') даст ответ 10
+// Вызов функции getMathResult(10, 0) даст ответ 10
+// Вызов функции getMathResult(20, -5) даст ответ 20
+
+// const getMathResult = (num1, num2) => {
+//     if (typeof num1 !== 'number' && typeof num2 !== 'number' || typeof num1 !== 'number') {
+//         console.log('Both arguments must be numbers');
+//     }
+//     else if (typeof num2 !== 'number' || num2 <= 0) {
+//         console.log(num1);
+//     }
+//     else {
+//         let result = '';
+//         for (let i = 1; i <= num2; i++) {
+//             result += `${num1 * i}`;
+//             if (i !== num2) {
+//                 result += '---'
+//             }
+//         }
+//         console.log(result);
+//         return result;
+//     }
+// }
+// getMathResult(9, 3);
+// getMathResult(9, '4');
+// getMathResult('9', 5);
+// getMathResult('9', '6');
+// getMathResult(0, 7);
+// getMathResult(9, 0);
+// getMathResult(9, -8);
+
+//******************************* */
+
+// const getMathResult = (num1, num2) => {
+//     if (isNaN(num1) && isNaN(num2) || typeof num1 !== 'number') {
+//         console.log('Both arguments must be numbers');
+//     } else if (typeof num2 !== 'number' || num2 <= 0) {
+//         console.log(num1);
+//         return num1
+//     } else {
+//         let result = '';
+//         for (let i = 1; i <= num2; i++) {
+//             result += `${num1 * i}`;
+//             if (i !== num2) {
+//                 result += '---'
+//             }
+//         }
+//         console.log(result);
+//         return result
+//     }
+// }
+// getMathResult(9, 3);
+// getMathResult(9, '4');
+// getMathResult('9', 5);
+// getMathResult('9', '6');
+// getMathResult(0, 7);
+// getMathResult(9, 0);
+// getMathResult(9, -8);
+
+//******************************* */
+
+
+// # Lesson 28 Methods and properties
+//String methods
+
+// const str = "teSt";
+// const arr = [1, 2, 5];
+// console.log(str.length); // 4
+// console.log(arr.length); // 3
+// console.log(str[1]); // e
+// console.log(str.toUpperCase()); // TEST
+// console.log(str.toLowerCase()); // test
+
+// const fruit = "Tasty apple";
+// console.log(fruit.indexOf('fruit')); // -1 (because it has not found in string)
+// console.log(fruit.indexOf('apple')); //6 (it is number of index where apple started 'a'pple)
+
+// const loggin = 'Azamat Zhamankulov';
+// console.log(loggin.slice(7, 18)); // Zhamankulov
+// console.log(loggin.slice(7)); // Zhamankulov
+// console.log(loggin.slice(-11, -1)); // Zhamankulo
+// console.log(loggin.substring(7, 18)); // Zhamankulov (substring cannot get -1 it will give o)
+// console.log(loggin.substr(7, 6)); // Zhaman (form which index to start, how many symbols to cut)
+
+//******************************* */
+// Number methods
+
+// const num1 = 12.2;
+// const num2 = 12.5; 
+// const numTest = "12.3px";
+
+// console.log(Math.round(num1)); // 12 
+// console.log(Math.round(num2)); // 13
+// console.log(Math.round(numTest)); // NaN
+
+// console.log(parseInt(numTest)); // 12 from string gives rounded number
+// console.log(parseFloat(numTest)); // 12.3 from string gives float number
+
+//******************************* */
