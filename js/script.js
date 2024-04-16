@@ -914,3 +914,16 @@
 //******************************* */
 
 // lesson # 29 more practice
+
+// const calculateVolumeAndArea = (a) => {
+//     if (a % 1 !== 0 || isNaN(a) || a < 0) {
+//         console.log('При вычислении произошла ошибка');
+//     } else {
+//         let volume = a * a * a;
+//         let area = a*a*6;
+//         let result = `Объем куба: ${volume}, площадь всей поверхности: ${area}`;
+//         console.log(result);
+//         return result;
+//     }
+// }
+// calculateVolumeAndArea(15)
