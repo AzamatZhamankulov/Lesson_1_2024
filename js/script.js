@@ -915,15 +915,56 @@
 
 // lesson # 29 more practice
 
-// const calculateVolumeAndArea = (a) => {
-//     if (a % 1 !== 0 || isNaN(a) || a < 0) {
-//         console.log('При вычислении произошла ошибка');
+// Excercise # 1 1) Создайте функцию, которая будет вычислять объем и площадь
+// полной поверхности куба (тоже базовая математика, иногда используется
+// в создании анимаций). Эта функция принимает в себя целое число со значением длины ребра
+// куба. Ответ выведите в формате строки, который изображен в примерах.
+// Если в функцию попал неправильный аргумент или вычислить значения невозможно - вернуть
+// строку "При вычислении произошла ошибка"
+
+const calculateVolumeAndArea = (a) => {
+    if (a % 1 !== 0 || isNaN(a) || a < 0) {
+        let calcError = console.log('При вычислении произошла ошибка');
+        return calcError;
+    } else {
+        let cubVolume = a * a * a;
+        let cubArea = a*a*6;
+        let result = `Объем куба: ${cubVolume}, площадь всей поверхности: ${cubArea}`;
+        console.log(result);
+        return result;
+    }
+}
+calculateVolumeAndArea(15);
+calculateVolumeAndArea(15.5);
+calculateVolumeAndArea('15');
+calculateVolumeAndArea(-15);
+calculateVolumeAndArea(0);
+
+
+// Excercise # 2 2) Напишите функцию, которая будет определять номер купе
+// по переданному ей номеру места. Функция принимает только целое число от 1 до 36.
+// Если переданный аргумент не число, отрицательное или дробное - возвращается сообщение:
+// "Ошибка. Проверьте правильность введенного номера места"
+// Если число 0 или больше 36, то сообщение: "Таких мест в вагоне не существует"
+
+// const getCoupeNumber = (seatNum) => {
+//     if (seatNum % 1 !== 0 || isNaN(seatNum) || seatNum < 0) {
+//         let error = console.log("Ошибка. Проверьте правильность введенного номера места");
+//         return error;
+//     } else if (seatNum === 0 || seatNum > 36) {
+//         let notExist = console.log("Таких мест в вагоне не существует");
+//         return notExist;
 //     } else {
-//         let volume = a * a * a;
-//         let area = a*a*6;
-//         let result = `Объем куба: ${volume}, площадь всей поверхности: ${area}`;
-//         console.log(result);
-//         return result;
+//         let seatResult = Math.ceil(seatNum / 4);
+//         console.log(seatResult);
+//         return seatResult;
 //     }
 // }
-// calculateVolumeAndArea(15)
+// getCoupeNumber(33);
+// getCoupeNumber(7);
+// getCoupeNumber(3);
+// getCoupeNumber(300);
+// getCoupeNumber(0);
+// getCoupeNumber(3.3);
+// getCoupeNumber(-3);
+// getCoupeNumber('two');
