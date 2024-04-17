@@ -923,7 +923,7 @@
 // строку "При вычислении произошла ошибка"
 
 const calculateVolumeAndArea = (a) => {
-    if (a % 1 !== 0 || isNaN(a) || a < 0) {
+    if (a % 1 !== 0 || typeof a !== 'number' || isNaN(a) || a < 0) {
         let calcError = console.log('При вычислении произошла ошибка');
         return calcError;
     } else {
@@ -948,7 +948,7 @@ calculateVolumeAndArea(0);
 // Если число 0 или больше 36, то сообщение: "Таких мест в вагоне не существует"
 
 // const getCoupeNumber = (seatNum) => {
-//     if (seatNum % 1 !== 0 || isNaN(seatNum) || seatNum < 0) {
+//     if (seatNum % 1 !== 0 || typeof seatNum !== 'number' || isNaN(seatNum) || seatNum < 0) {
 //         let error = console.log("Ошибка. Проверьте правильность введенного номера места");
 //         return error;
 //     } else if (seatNum === 0 || seatNum > 36) {
@@ -968,3 +968,18 @@ calculateVolumeAndArea(0);
 // getCoupeNumber(3.3);
 // getCoupeNumber(-3);
 // getCoupeNumber('two');
+
+// const isNumberFloatOrInteger = (num) => {
+//     if (num % 1 !== 0 || typeof num !== 'number' || num < 0) {
+//         let result = console.log(`Number is float`);
+//         return result;
+//  } else {
+//     console.log('Number is integer')
+//  }
+// }
+// isNumberFloatOrInteger(15);
+// isNumberFloatOrInteger(1);
+// isNumberFloatOrInteger(1.5);
+// isNumberFloatOrInteger('15');
+// isNumberFloatOrInteger(0);
+// isNumberFloatOrInteger(-15);
