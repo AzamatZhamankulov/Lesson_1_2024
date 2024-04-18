@@ -922,23 +922,23 @@
 // Если в функцию попал неправильный аргумент или вычислить значения невозможно - вернуть
 // строку "При вычислении произошла ошибка"
 
-const calculateVolumeAndArea = (a) => {
-    if (a % 1 !== 0 || typeof a !== 'number' || isNaN(a) || a < 0) {
-        let calcError = console.log('При вычислении произошла ошибка');
-        return calcError;
-    } else {
-        let cubVolume = a * a * a;
-        let cubArea = a*a*6;
-        let result = `Объем куба: ${cubVolume}, площадь всей поверхности: ${cubArea}`;
-        console.log(result);
-        return result;
-    }
-}
-calculateVolumeAndArea(15);
-calculateVolumeAndArea(15.5);
-calculateVolumeAndArea('15');
-calculateVolumeAndArea(-15);
-calculateVolumeAndArea(0);
+// const calculateVolumeAndArea = (a) => {
+//     if (a % 1 !== 0 || typeof a !== 'number' || isNaN(a) || a < 0) {
+//         let calcError = console.log('При вычислении произошла ошибка');
+//         return calcError;
+//     } else {
+//         let cubVolume = a * a * a;
+//         let cubArea = a*a*6;
+//         let result = `Объем куба: ${cubVolume}, площадь всей поверхности: ${cubArea}`;
+//         console.log(result);
+//         return result;
+//     }
+// }
+// calculateVolumeAndArea(15);
+// calculateVolumeAndArea(15.5);
+// calculateVolumeAndArea('15');
+// calculateVolumeAndArea(-15);
+// calculateVolumeAndArea(0);
 
 
 // Excercise # 2 2) Напишите функцию, которая будет определять номер купе
@@ -983,3 +983,30 @@ calculateVolumeAndArea(0);
 // isNumberFloatOrInteger('15');
 // isNumberFloatOrInteger(0);
 // isNumberFloatOrInteger(-15);
+
+
+// Excercise # 1 1) Создайте функцию, которая принимает в себя целое число минут и 
+// возвращает время в нужном формате строки. (Смотри пример). Обратите внимание на 
+// окончание слова "час" - оно меняется в зависимости от цифры. Если вместо аргумента
+// приходит не число, дробное или отрицательное число - функция возвращает строку "Ошибка,
+// проверьте данные"
+
+const getTimeFromMinutes = (min) => {
+    if (typeof min !== 'number' || min < 0 || isNaN(min) || min % 1 !== 0) {
+        let error = console.log('Ошибка, проверьте данные');
+        return error;
+    } else {
+        let hours = Math.floor(min / 60);
+        let minutes = min % 60;
+
+        let result = console.log(`Это ${hours} часа и ${minutes} минут`);
+        return result;
+    }
+}
+
+getTimeFromMinutes(160);
+getTimeFromMinutes(50);
+getTimeFromMinutes(0);
+getTimeFromMinutes(-150);
+getTimeFromMinutes(60);
+getTimeFromMinutes('60');
