@@ -998,15 +998,29 @@ const getTimeFromMinutes = (min) => {
     } else {
         let hours = Math.floor(min / 60);
         let minutes = min % 60;
+        let lastDigit = hours % 10; // Получаем последнюю цифру числа
+        
+        if (lastDigit >= 5 || lastDigit === 0 || (hours >= 10 && hours <= 14)) {
+            hours = `${hours} часов`;
+        } else if (lastDigit >= 2 && lastDigit <= 4) {
+            hours = `${hours} часа`;
+        } else {
+            hours = `${hours} час`;
+        }
 
-        let result = console.log(`Это ${hours} часа и ${minutes} минут`);
+        let result = console.log(`Это ${hours} и ${minutes} минут`);
         return result;
     }
 }
 
-getTimeFromMinutes(160);
-getTimeFromMinutes(50);
 getTimeFromMinutes(0);
-getTimeFromMinutes(-150);
-getTimeFromMinutes(60);
-getTimeFromMinutes('60');
+getTimeFromMinutes(1);
+getTimeFromMinutes(-6);
+getTimeFromMinutes(1777);
+getTimeFromMinutes(1444);
+getTimeFromMinutes(785);
+getTimeFromMinutes(555);
+getTimeFromMinutes(2555);
+getTimeFromMinutes(2777);
+getTimeFromMinutes(3111);
+getTimeFromMinutes('120');
