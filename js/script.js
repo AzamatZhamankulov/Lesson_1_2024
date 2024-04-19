@@ -985,42 +985,73 @@
 // isNumberFloatOrInteger(-15);
 
 
-// Excercise # 1 1) Создайте функцию, которая принимает в себя целое число минут и 
+//! Excercise # 1 1) Создайте функцию, которая принимает в себя целое число минут и 
 // возвращает время в нужном формате строки. (Смотри пример). Обратите внимание на 
 // окончание слова "час" - оно меняется в зависимости от цифры. Если вместо аргумента
 // приходит не число, дробное или отрицательное число - функция возвращает строку "Ошибка,
 // проверьте данные"
 
-const getTimeFromMinutes = (min) => {
-    if (typeof min !== 'number' || min < 0 || isNaN(min) || min % 1 !== 0) {
-        let error = console.log('Ошибка, проверьте данные');
-        return error;
-    } else {
-        let hours = Math.floor(min / 60);
-        let minutes = min % 60;
-        let lastDigit = hours % 10; // Получаем последнюю цифру числа
+// const getTimeFromMinutes = (min) => {
+//     if (typeof min !== 'number' || min < 0 || isNaN(min) || min % 1 !== 0) {
+//         let error = console.log('Ошибка, проверьте данные');
+//         return error;
+//     } else {
+//         let hours = Math.floor(min / 60);
+//         let minutes = min % 60;
+//         let lastDigit = hours % 10; // Получаем последнюю цифру числа
         
-        if (lastDigit >= 5 || lastDigit === 0 || (hours >= 10 && hours <= 14)) {
-            hours = `${hours} часов`;
-        } else if (lastDigit >= 2 && lastDigit <= 4) {
-            hours = `${hours} часа`;
-        } else {
-            hours = `${hours} час`;
-        }
+//         if (lastDigit >= 5 || lastDigit === 0 || (hours >= 10 && hours <= 14)) {
+//             hours = `${hours} часов`;
+//         } else if (lastDigit >= 2 && lastDigit <= 4) {
+//             hours = `${hours} часа`;
+//         } else {
+//             hours = `${hours} час`;
+//         }
 
-        let result = console.log(`Это ${hours} и ${minutes} минут`);
-        return result;
-    }
+//         let result = console.log(`Это ${hours} и ${minutes} минут`);
+//         return result;
+//     }
+// }
+
+// getTimeFromMinutes(0);
+// getTimeFromMinutes(1);
+// getTimeFromMinutes(-6);
+// getTimeFromMinutes(1777);
+// getTimeFromMinutes(1444);
+// getTimeFromMinutes(785);
+// getTimeFromMinutes(555);
+// getTimeFromMinutes(2555);
+// getTimeFromMinutes(2777);
+// getTimeFromMinutes(3111);
+// getTimeFromMinutes('120');
+
+
+//! Excercise # 2 2) Напишите функцию, которая принимает в себя 4 числа и возвращает
+// самое большее из них. Если один из аргументов не является числом или их меньше 4 
+// то возвращается 0. Дробные числа разрешены.
+
+// const findMaxNumber = (num1, num2, num3, num4) => {
+//     if (num1 > num2 && num1 > num3 && num1 > num4) {
+//         return console.log(num1);
+//     } else if (num2 > num1 && num2 > num3 && num2 > num4) {
+//         return console.log(num2);
+//     } else if (num3 > num1 && num3 > num2 && num3 > num4) {
+//         return console.log(num3);
+//     } else if (num4 > num1 && num4 > num2 && num4 > num3) {
+//         return console.log(num4);
+//     }
+// }
+
+// findMaxNumber(500, 3, 400, 600);
+
+//todo Method 2 *********************************
+
+const findMaxNumber = (a, b, c, d) => {
+    // let arr = new Array(a, b, c, d);
+    // let maxArr = Math.max(...arr);
+    let maxArr = Math.max(a, b, c, d);
+    console.log(maxArr);
+    return maxArr;
+    
 }
-
-getTimeFromMinutes(0);
-getTimeFromMinutes(1);
-getTimeFromMinutes(-6);
-getTimeFromMinutes(1777);
-getTimeFromMinutes(1444);
-getTimeFromMinutes(785);
-getTimeFromMinutes(555);
-getTimeFromMinutes(2555);
-getTimeFromMinutes(2777);
-getTimeFromMinutes(3111);
-getTimeFromMinutes('120');
+findMaxNumber(30, -5, 60, 77.7);
