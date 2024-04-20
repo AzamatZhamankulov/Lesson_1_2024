@@ -1,8 +1,8 @@
 "use strict";
 
-// lesson # 13 comunication with user
+//! lesson # 13 comunication with user
 
-// const answers = [];
+//? const answers = [];
 
 // // answers[0] = prompt('What is your name?', '');
 // // answers[1] = prompt('What is your family name?', '');
@@ -13,7 +13,7 @@
 // document.write(answers);
 
 
-// lesson # 14 Interpolation
+//! lesson # 14 Interpolation
 
 // const category = 'toys';
 // console.log(`https://someurl.com/${category}/5`);
@@ -22,7 +22,7 @@
 // alert(`Guten Morgen, ${username}`);
 
 
-// lesson # 15 Operators in JavaScript
+//! lesson # 15 Operators in JavaScript
 // let incr = 10,
 //     decr = 10;
 
@@ -33,7 +33,7 @@
 // console.log(--decr);
 
 
-// lesson # 16 System GIT / Array and Objects
+//! lesson # 16 System GIT / Array and Objects
 
 // const numberofFilms = +prompt('Hello, how many films have you watched already?', '');
 
@@ -79,7 +79,7 @@
 
 // console.log(personProfileDB);
 
-// lesson # 20 Conditions if / else / ? : / switch - case - default
+//! lesson # 20 Conditions if / else / ? : / switch - case - default
 
 // if (4 == 4) {
 //     console.log('ok!');
@@ -116,7 +116,7 @@
 //         break;
 // }
 
-// lesson # 21 Logical operations
+//! lesson # 21 Logical operations
 
 // const hamburger = 5;
 // const fries = 1;
@@ -215,7 +215,7 @@
 // }
 
 
-// lesson # 22 Cycles
+//! lesson # 22 Cycles
 
 /////// CYCLE while
 // let num = 50;
@@ -226,7 +226,7 @@
 // }
 
 
-/////// CYCLE do {something} while (this condition)
+//? CYCLE do {something} while (this condition)
 
 // let num = 45;
 
@@ -237,7 +237,7 @@
 // while (num < 55);
 
 
-///// CYCLE for (i = 1; when it is < 8; i++ increase for 1 untill it will be equal to 8)
+//? CYCLE for (i = 1; when it is < 8; i++ increase for 1 untill it will be equal to 8)
 
 // for (let i = 1; i < 8; i++) {
 //    console.log(i);
@@ -261,7 +261,7 @@
 // }
 
 
-// lesson # 23 Cycles in cycle
+//! lesson # 23 Cycles in cycle
 
 // for (let i = 0; i <3; i++) {
 //    console.log(i);
@@ -302,8 +302,8 @@
 // }
 
 
-// Taks #1: При помощи цикла выведите числа от 5 до 10 в консоль.
-// 5 и 10 включительно. Цикл можно использовать любой
+//todo Taks #1: При помощи цикла выведите числа от 5 до 10 в консоль.
+//todo 5 и 10 включительно. Цикл можно использовать любой
 
 // function firstTask() {
 //    for (i = 5; i<=10; i++) {
@@ -313,8 +313,8 @@
 // firstTask();
 
 
-// Task #2 При помощи цикла for вывести числа от 20 до 10 в консоль.
-// В обратном порядке (20, 19, 18...). Когда цикл дойдет до числа 13 - остановить весь цикл
+//todo  Task #2 При помощи цикла for вывести числа от 20 до 10 в консоль.
+//todo В обратном порядке (20, 19, 18...). Когда цикл дойдет до числа 13 - остановить весь цикл
 
 // function secondTask() {
 //    for (let i = 20; i >= 10; i--) {
@@ -325,7 +325,7 @@
 // secondTask();
 
 
-// Task #3 При помощи цикла for выведите чётные числа от 2 до 10 включительно
+//todo Task #3 При помощи цикла for выведите чётные числа от 2 до 10 включительно
 
 // function thirdTask () {
 //     for (let i = 2; i <= 10; i++) {
@@ -337,9 +337,8 @@
 // thirdTask();
 
 
-// Task #4 Перепишите цикл  for на вариант с while. Результат должен остаться точно таким же.
-// Не создайте бесконечный цикл! Иначе браузер может зависнуть.
-// Цикл, который нужно переписать:
+//todo Task #4 Перепишите цикл  for на вариант с while. Результат должен остаться точно таким же.
+//todo Не создайте бесконечный цикл! Иначе браузер может зависнуть. Цикл, который нужно переписать:
 
 // for (let i = 2; i <= 16; i++) {
 //    if (i % 2 === 0) {
@@ -365,8 +364,8 @@
 // fourthTask();
 
 
-// Task # 5 Заполните массив цифрами от 5 до 10 включительно. Помните, 
-// что элементы массива можно сформировать так же, как и обращаться к ним: arr[0]
+//todo Task # 5 Заполните массив цифрами от 5 до 10 включительно. Помните, 
+//todo что элементы массива можно сформировать так же, как и обращаться к ним: arr[0]
 
 // function fifthTask() {
 //     const arrayOfNumbers = [];
@@ -379,10 +378,10 @@
 // fifthTask();
 
 
-// Task 2.1 Заполните новый массив (result) числами из старого (arr). 
-// Количество элементов в массиве можно получить как arr.length, 
-// а к элементам обращаемся все так же: arr[0], arr[1] и тд.
-// Должен получиться точно такой же массив 
+//todo Task 2.1 Заполните новый массив (result) числами из старого (arr). 
+//todo Количество элементов в массиве можно получить как arr.length, 
+//todo а к элементам обращаемся все так же: arr[0], arr[1] и тд.
+//todo Должен получиться точно такой же массив 
 
 // function firstAdvancedTask() {
 //     const arr = [3, 5, 8, 16, 20, 23, 50];
@@ -397,10 +396,10 @@
 // firstAdvancedTask();
 
 
-// Task 2.2 Измените данный массив так, чтобы все числа были увеличены в 2 раза, 
-// а если попадается строка строка - то к ней было добавлено " - done".
-// Для определения типа данных используйте typeof();
-// Должно получиться: [ 10, 20, 'Shopping - done', 40, 'Homework - done' ]
+//todo Task 2.2 Измените данный массив так, чтобы все числа были увеличены в 2 раза, 
+//todo а если попадается строка строка - то к ней было добавлено " - done".
+//todo Для определения типа данных используйте typeof();
+//todo Должно получиться: [ 10, 20, 'Shopping - done', 40, 'Homework - done' ]
 
 // function secondAdvancedTask() {
 //     const data = [5, 10, 'Shopping', 20, 'Homework'];
@@ -419,8 +418,8 @@
 // secondAdvancedTask();
 
 
-// Task 2.3 Разверните массив data наоборот при помощи цикла и запишите данные 
-// в массив result. Должно получиться: [ 'Homework', 20, 'Shopping', 10, 5 ]
+//todo Task 2.3 Разверните массив data наоборот при помощи цикла и запишите данные 
+//todo в массив result. Должно получиться: [ 'Homework', 20, 'Shopping', 10, 5 ]
 
 // function thirdAdvancedTask() {
 //     const data = [5, 10, 'Shopping', 20, 'Homework'];
@@ -435,7 +434,7 @@
 // thirdAdvancedTask();
 
 
-// Task 2.3 (**) Задача на формирование фигуры
+//todo Task 2.3 (**) Задача на формирование фигуры
 //      *
 //     ***
 //    *****
@@ -458,7 +457,7 @@
 // console.log(result);
 
 
-// Lesson 24 cycle practice:
+//! Lesson 24 cycle practice:
 
 // let askingMovie = prompt('What movie did you watch?', '');
 // const personalMovieDB = {
@@ -519,7 +518,7 @@
 // console.log(personalMovieDB);
 
 
-// lesson # 26 Functions and Arrow functions
+//! lesson # 26 Functions and Arrow functions
 
 // Function Declatarion
 // function foo() {
@@ -566,7 +565,7 @@
 // logger();
 
 
-//  Arrow functions 
+//?  Arrow functions 
 // const calc = (a, b) => {return a + b}; 
 
 
@@ -646,7 +645,7 @@
 // );
 
 
-// # Lesson 26 Function and Arguments
+//! # Lesson 26 Function and Arguments
 
 // const usdCurr = 89;
 // const eurCurr = 90;
@@ -660,7 +659,7 @@
 
 //******************************* */
 
-// # Lesson 27 Function and Return
+//! # Lesson 27 Function and Return
 
 // const usdCurr = 89;
 // const discount = 0.1;
@@ -691,7 +690,7 @@
 //******************************* */
 
 
-// # Lesson 28 Function and Return practice
+//! # Lesson 28 Function and Return practice
 // excercise #1: 1) Создайте функцию, которая будет на вход принимать 1 аргумент
 // с именем человека и возвращать строку. Пример: вызов функции sayHello('Антон')
 // возвращает строку "Привет, Антон!".
@@ -704,10 +703,10 @@
 // sayHello('azaMaza');
 
 
-// excercise #2: 2) Создайте функцию, которая принимает в себя 1 аргумент в виде
-// целого числа и возвращает массив из трех чисел: одно на 1 меньше, сам аргумент,
-// и число на 1 больше. Пример: вызов функции returnNeighboringNumbers(5)
-// возвращает массив в виде [4, 5, 6].
+//todo excercise #2: 2) Создайте функцию, которая принимает в себя 1 аргумент в виде
+//todo целого числа и возвращает массив из трех чисел: одно на 1 меньше, сам аргумент,
+//todo и число на 1 больше. Пример: вызов функции returnNeighboringNumbers(5)
+//todo возвращает массив в виде [4, 5, 6].
 
 // const returnNeighboringNumbers = (a) => {
 //     let arr = [a - 1, a, a + 1];
@@ -725,26 +724,26 @@
 
 //     return [num - 1, num, num + 1];
 // }
-// // Пример использования:
+//? Пример использования:
 // const result = returnNeighboringNumbers(5);
 // console.log(result); // Вывод: [4, 5, 6]
 
 //******************************* */
 
 
-// excercise #2: 3) Создайте функцию, которая будет принимать в себя 2 аргумента, оба числа. Первое число - это база,
-// второе число - это сколько раз нужно будет повторить это число в прогрессии.
-// (Смотри пример ниже). Функция должна возвращать строку (или число в особых случаях,
-// о которых ниже), где эти числа идут по порядку, разделенные тремя дефисами "---".
-// После последнего числа их не должно быть. Если второй аргумент не является числом,
-// равен или меньше нуля - то возвращать просто первый аргумент. (Проверяем через
-// оператор typeof) Примеры:
-// Вызов функции getMathResult(5, 3) даст ответ 5---10---15
-// Вызов функции getMathResult(3, 10) даст ответ 3---6---9---12---15---18---21---24---27---30
-// Вызов функции getMathResult(10, 5) даст ответ 10---20---30---40---50
-// Вызов функции getMathResult(10, '5') даст ответ 10
-// Вызов функции getMathResult(10, 0) даст ответ 10
-// Вызов функции getMathResult(20, -5) даст ответ 20
+//todo excercise #2: 3) Создайте функцию, которая будет принимать в себя 2 аргумента, оба числа. Первое число - это база,
+//todo второе число - это сколько раз нужно будет повторить это число в прогрессии.
+//todo (Смотри пример ниже). Функция должна возвращать строку (или число в особых случаях,
+//todo о которых ниже), где эти числа идут по порядку, разделенные тремя дефисами "---".
+//todo После последнего числа их не должно быть. Если второй аргумент не является числом,
+//todo равен или меньше нуля - то возвращать просто первый аргумент. (Проверяем через
+//todo оператор typeof) Примеры:
+//todo Вызов функции getMathResult(5, 3) даст ответ 5---10---15
+//todo Вызов функции getMathResult(3, 10) даст ответ 3---6---9---12---15---18---21---24---27---30
+//todo Вызов функции getMathResult(10, 5) даст ответ 10---20---30---40---50
+//todo Вызов функции getMathResult(10, '5') даст ответ 10
+//todo Вызов функции getMathResult(10, 0) даст ответ 10
+//todo Вызов функции getMathResult(20, -5) даст ответ 20
 
 // const getMathResult = (num1, num2) => {
 //     if (typeof num1 !== 'number' && typeof num2 !== 'number' || typeof num1 !== 'number') {
@@ -804,8 +803,8 @@
 //******************************* */
 
 
-// # Lesson 28 Methods and properties
-//String methods
+//! # Lesson 28 Methods and properties
+//?String methods
 
 // const str = "teSt";
 // const arr = [1, 2, 5];
@@ -827,7 +826,7 @@
 // console.log(loggin.substr(7, 6)); // Zhaman (form which index to start, how many symbols to cut)
 
 //******************************* */
-// Number methods
+//? Number methods
 
 // const num1 = 12.2;
 // const num2 = 12.5; 
@@ -843,7 +842,7 @@
 //******************************* */
 
 
-// # Lesson 29 Functions prectice excercise
+//! # Lesson 29 Functions prectice excercise
 
 // let numberOfFilms;
 
@@ -913,14 +912,14 @@
 
 //******************************* */
 
-// lesson # 29 more practice
+//! lesson # 29 more practice
 
-// Excercise # 1 1) Создайте функцию, которая будет вычислять объем и площадь
-// полной поверхности куба (тоже базовая математика, иногда используется
-// в создании анимаций). Эта функция принимает в себя целое число со значением длины ребра
-// куба. Ответ выведите в формате строки, который изображен в примерах.
-// Если в функцию попал неправильный аргумент или вычислить значения невозможно - вернуть
-// строку "При вычислении произошла ошибка"
+//todo Excercise # 1 1) Создайте функцию, которая будет вычислять объем и площадь
+//todo полной поверхности куба (тоже базовая математика, иногда используется
+//todo в создании анимаций). Эта функция принимает в себя целое число со значением длины ребра
+//todo куба. Ответ выведите в формате строки, который изображен в примерах.
+//todo Если в функцию попал неправильный аргумент или вычислить значения невозможно - вернуть
+//todo строку "При вычислении произошла ошибка"
 
 // const calculateVolumeAndArea = (a) => {
 //     if (a % 1 !== 0 || typeof a !== 'number' || isNaN(a) || a < 0) {
@@ -941,11 +940,11 @@
 // calculateVolumeAndArea(0);
 
 
-// Excercise # 2 2) Напишите функцию, которая будет определять номер купе
-// по переданному ей номеру места. Функция принимает только целое число от 1 до 36.
-// Если переданный аргумент не число, отрицательное или дробное - возвращается сообщение:
-// "Ошибка. Проверьте правильность введенного номера места"
-// Если число 0 или больше 36, то сообщение: "Таких мест в вагоне не существует"
+//todo Excercise # 2 2) Напишите функцию, которая будет определять номер купе
+//todo по переданному ей номеру места. Функция принимает только целое число от 1 до 36.
+//todo Если переданный аргумент не число, отрицательное или дробное - возвращается сообщение:
+//todo "Ошибка. Проверьте правильность введенного номера места"
+//todo Если число 0 или больше 36, то сообщение: "Таких мест в вагоне не существует"
 
 // const getCoupeNumber = (seatNum) => {
 //     if (seatNum % 1 !== 0 || typeof seatNum !== 'number' || isNaN(seatNum) || seatNum < 0) {
@@ -985,19 +984,19 @@
 // isNumberFloatOrInteger(-15);
 
 
-//! Excercise # 1 1) Создайте функцию, которая принимает в себя целое число минут и 
-// возвращает время в нужном формате строки. (Смотри пример). Обратите внимание на 
-// окончание слова "час" - оно меняется в зависимости от цифры. Если вместо аргумента
-// приходит не число, дробное или отрицательное число - функция возвращает строку "Ошибка,
-// проверьте данные"
+//todo Excercise # 1 1) Создайте функцию, которая принимает в себя целое число минут и 
+//todo возвращает время в нужном формате строки. (Смотри пример). Обратите внимание на 
+//todo окончание слова "час" - оно меняется в зависимости от цифры. Если вместо аргумента
+//todo приходит не число, дробное или отрицательное число - функция возвращает строку "Ошибка,
+//todo проверьте данные"
 
-// const getTimeFromMinutes = (min) => {
-//     if (typeof min !== 'number' || min < 0 || isNaN(min) || min % 1 !== 0) {
+// const getTimeFromMinutes = (totalMinutes) => {
+//     if (typeof totalMinutes !== 'number' || totalMinutes < 0 || isNaN(totalMinutes) || totalMinutes % 1 !== 0) {
 //         let error = console.log('Ошибка, проверьте данные');
 //         return error;
 //     } else {
-//         let hours = Math.floor(min / 60);
-//         let minutes = min % 60;
+//         let hours = Math.floor(totalMinutes / 60);
+//         let minutes = totalMinutes % 60;
 //         let lastDigit = hours % 10; // Получаем последнюю цифру числа
         
 //         if (lastDigit >= 5 || lastDigit === 0 || (hours >= 10 && hours <= 14)) {
@@ -1026,32 +1025,43 @@
 // getTimeFromMinutes('120');
 
 
-//! Excercise # 2 2) Напишите функцию, которая принимает в себя 4 числа и возвращает
-// самое большее из них. Если один из аргументов не является числом или их меньше 4 
-// то возвращается 0. Дробные числа разрешены.
+//todo Excercise # 2 2) Напишите функцию, которая принимает в себя 4 числа и возвращает
+//todo самое большее из них. Если один из аргументов не является числом или их меньше 4 
+//todo то возвращается 0. Дробные числа разрешены.
 
 // const findMaxNumber = (num1, num2, num3, num4) => {
-//     if (num1 > num2 && num1 > num3 && num1 > num4) {
-//         return console.log(num1);
+//     if (isNaN(num1 + num2 + num3 + num4) || typeof(num1 + num2 + num3 + num4) !== 'number') {
+//         console.log(0);
+//         return 0
+//     } else if (num1 > num2 && num1 > num3 && num1 > num4) {
+//         console.log(num1);
+//         return num1;
 //     } else if (num2 > num1 && num2 > num3 && num2 > num4) {
-//         return console.log(num2);
+//         console.log(num2);
+//         return num2;
 //     } else if (num3 > num1 && num3 > num2 && num3 > num4) {
-//         return console.log(num3);
+//         console.log(num3);
+//         return num3;
 //     } else if (num4 > num1 && num4 > num2 && num4 > num3) {
-//         return console.log(num4);
+//         console.log(num4);
+//         return num4;
 //     }
 // }
 
-// findMaxNumber(500, 3, 400, 600);
+// findMaxNumber(500, 3000, 600, 750);
 
 //todo Method 2 *********************************
 
-const findMaxNumber = (a, b, c, d) => {
-    // let arr = new Array(a, b, c, d);
-    // let maxArr = Math.max(...arr);
-    let maxArr = Math.max(a, b, c, d);
-    console.log(maxArr);
-    return maxArr;
-    
-}
-findMaxNumber(30, -5, 60, 77.7);
+// const findMaxNumber = (a, b, c, d) => {
+//     if (typeof (a+b+c+d) !== 'number') {
+//         console.log(0);
+//         return 0;
+//     } else {
+//         ////let arr = new Array(a, b, c, d);
+//         ////let maxArr = Math.max(...arr);
+//         let maxArr = Math.max(a, b, c, d);
+//         console.log(maxArr);
+//         return maxArr;
+//     } 
+// }
+// findMaxNumber(30, -5, 60, 77.7);
