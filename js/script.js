@@ -1073,33 +1073,102 @@
 //todo Если переданный аргумент не число - вернуть пустую строку.
 //todo Решать без применения рекурсии.
 
-const fibonacciSequence = (n) => {
-    if (typeof n !== 'number' || !Number.isInteger(n) || n <= 0) {
-        let empty = '';
-        console.log(empty);
-        return empty; // Возвращаем пустую строку, если аргумент не является положительным целым числом
-    }
+// const fibonacciSequence = (n) => {
+//     if (typeof n !== 'number' || !Number.isInteger(n) || n <= 0) {
+//         let empty = '';
+//         console.log(empty);
+//         return empty; // Возвращаем пустую строку, если аргумент не является положительным целым числом
+//     }
     
-    let fibList = [];  // Начальное значение списка пустое
-    let a = 0;
-    let b = 1;
-    for (let i = 0; i < n; i++) {  // Генерируем n чисел Фибоначчи
-        fibList.push(a);  // Добавляем текущее число Фибоначчи в список
-        let temp = a + b;
-        a = b;
-        b = temp;
-    }
+//     let fibList = [];  // Начальное значение списка пустое
+//     let a = 0;
+//     let b = 1;
+//     for (let i = 0; i < n; i++) {  // Генерируем n чисел Фибоначчи
+//         fibList.push(a);  // Добавляем текущее число Фибоначчи в список
+//         let temp = a + b;
+//         a = b;
+//         b = temp;
+//     }
     
-    let gapBetween = fibList.join(' ');
-    console.log(gapBetween);
-    return gapBetween;  // Возвращаем строку, объединяя числа Фибоначчи через пробел
-}
+//     let gapBetween = fibList.join(' ');
+//     console.log(gapBetween);
+//     return gapBetween;  // Возвращаем строку, объединяя числа Фибоначчи через пробел
+// }
 
-fibonacciSequence(4);  // => "0 1 1 2"
-fibonacciSequence(0);  // => ""
-fibonacciSequence(7);  // => "0 1 1 2 3 5 8"
-fibonacciSequence('7');  // => ""
-fibonacciSequence(1);  // => "0"
-fibonacciSequence(8.8); // => ""
-fibonacciSequence(10); // => "0 1 1 2 3 5 8 13 21 34"
+// fibonacciSequence(4);  // => "0 1 1 2"
+// fibonacciSequence(0);  // => ""
+// fibonacciSequence(7);  // => "0 1 1 2 3 5 8"
+// fibonacciSequence('7');  // => ""
+// fibonacciSequence(1);  // => "0"
+// fibonacciSequence(8.8); // => ""
+// fibonacciSequence(10); // => "0 1 1 2 3 5 8 13 21 34"
+
+
+//! lesson 30 - Method trim()
+
+let numberOfFilms;
+
+function start() {
+    numberOfFilms = +prompt('How many films did you watch?', '');
+
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt('Please insert number of how many films did you watch?', '');
+    }
+}
+start ();
+
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+function rememberMyFilms(){
+    for (let i = 0; i < 2; i++) {
+        const a = prompt('Insert title of one of the last seen films', '').trim(), // delete for empty space
+              b = +prompt('Please rate the film in scale of 1 - 10', '');
+        
+        if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+            personalMovieDB.movies[a] = b;
+            console.log('Done!');
+        } else {
+            console.log('Error');
+            i--;
+        }
+    }
+}
+rememberMyFilms();
+
+
+function detectPersonalLevel() {
+    if (personalMovieDB.count < 10) {
+        console.log('You are an amature, too less films has been watched.');
+    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+        console.log('You are a classic watcher!');
+    } else if (personalMovieDB.count >= 30) {
+        console.log('You are a kinoman!');
+    } else {
+        console.log('There is something went wrong!')
+    }
+}
+detectPersonalLevel();
+
+
+function showMyDB (hidden) {
+    if (!hidden) {
+        console.log(personalMovieDB);
+    }
+}
+showMyDB(personalMovieDB.privat);
+
+
+function writeYourGenres() {
+    for (let i = 1; i <= 3; i++) {
+        personalMovieDB.genres[i - 1] = prompt(`Your favorite genre is under number ${i}`).trim();
+    }
+}
+writeYourGenres();
 
