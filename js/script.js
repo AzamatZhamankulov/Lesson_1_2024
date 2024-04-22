@@ -1106,69 +1106,98 @@
 
 //! lesson 30 - Method trim()
 
-let numberOfFilms;
+// let numberOfFilms;
 
-function start() {
-    numberOfFilms = +prompt('How many films did you watch?', '');
+// function start() {
+//     numberOfFilms = +prompt('How many films did you watch?', '');
 
-    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-        numberOfFilms = +prompt('Please insert number of how many films did you watch?', '');
-    }
-}
-start ();
+//     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+//         numberOfFilms = +prompt('Please insert number of how many films did you watch?', '');
+//     }
+// }
+// start ();
 
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false
+// };
 
-function rememberMyFilms(){
-    for (let i = 0; i < 2; i++) {
-        const a = prompt('Insert title of one of the last seen films', '').trim(), // delete for empty space
-              b = +prompt('Please rate the film in scale of 1 - 10', '');
+// function rememberMyFilms(){
+//     for (let i = 0; i < 2; i++) {
+//         const a = prompt('Insert title of one of the last seen films', '').trim(), // delete for empty space
+//               b = +prompt('Please rate the film in scale of 1 - 10', '');
         
-        if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-            personalMovieDB.movies[a] = b;
-            console.log('Done!');
-        } else {
-            console.log('Error');
-            i--;
-        }
-    }
+//         if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//             personalMovieDB.movies[a] = b;
+//             console.log('Done!');
+//         } else {
+//             console.log('Error');
+//             i--;
+//         }
+//     }
+// }
+// rememberMyFilms();
+
+
+// function detectPersonalLevel() {
+//     if (personalMovieDB.count < 10) {
+//         console.log('You are an amature, too less films has been watched.');
+//     } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//         console.log('You are a classic watcher!');
+//     } else if (personalMovieDB.count >= 30) {
+//         console.log('You are a kinoman!');
+//     } else {
+//         console.log('There is something went wrong!')
+//     }
+// }
+// detectPersonalLevel();
+
+
+// function showMyDB (hidden) {
+//     if (!hidden) {
+//         console.log(personalMovieDB);
+//     }
+// }
+// showMyDB(personalMovieDB.privat);
+
+
+// function writeYourGenres() {
+//     for (let i = 1; i <= 3; i++) {
+//         personalMovieDB.genres[i - 1] = prompt(`Your favorite genre is under number ${i}`).trim();
+//     }
+// }
+// writeYourGenres();
+
+
+//! Lesson 31 - Callback functions
+
+function first() {
+    // do something and it takes sometime to implement the function
+    setTimeout(function () {
+        console.log(1);
+    }, 500)
 }
-rememberMyFilms();
 
-
-function detectPersonalLevel() {
-    if (personalMovieDB.count < 10) {
-        console.log('You are an amature, too less films has been watched.');
-    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-        console.log('You are a classic watcher!');
-    } else if (personalMovieDB.count >= 30) {
-        console.log('You are a kinoman!');
-    } else {
-        console.log('There is something went wrong!')
-    }
+function second() {
+    console.log(2);
 }
-detectPersonalLevel();
 
+first(); // because of setTimeout 500 it will give a result after 2nd function
+second(); // second function will implemented 1st 
 
-function showMyDB (hidden) {
-    if (!hidden) {
-        console.log(personalMovieDB);
-    }
+//! so now callback functions can make to implement functions strictly by order
+
+function learnJS(lang, callback) {
+    console.log(`I learn: ${lang}`);
+    callback();
 }
-showMyDB(personalMovieDB.privat);
 
-
-function writeYourGenres() {
-    for (let i = 1; i <= 3; i++) {
-        personalMovieDB.genres[i - 1] = prompt(`Your favorite genre is under number ${i}`).trim();
-    }
+function done() {
+    console.log('I have finished this course!');
 }
-writeYourGenres();
 
+learnJS('JavaScript course', done);
