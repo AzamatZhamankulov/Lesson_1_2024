@@ -1215,8 +1215,26 @@ const options = {
     }
 };
 
-console.log(options.colors.bg);
+// console.log(options.colors.bg);
 
-delete options.colors.bg;
+// delete options.colors.bg;
 
-console.log(options); // without colors.bg
+// console.log(options); // without colors.bg
+
+// for (let key in options) {
+//     let result = `Properity of ${key} is ${options [key]}`;
+//     console.log(result);
+// }
+
+//! when it gives [object Object]
+
+for (let key in options) {
+    if (typeof(options [key]) === 'object') {
+        for (let i in options [key]) {
+        console.log(`Properity of ${i} is ${options [key] [i]}`);
+        }
+    } else {
+        let result = `Properity of ${key} is ${options [key]}`;
+        console.log(result);
+    }
+}
