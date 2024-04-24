@@ -1206,13 +1206,13 @@
 //! Lesson 32 - Objects and Destruction of objects
 
 const options = {
-    name: 'test',
-    width: 1024,
-    height: 1024,
-    colors: {
-        border: 'black',
-        bg: 'red'
-    }
+  name: 'test',
+  width: 1024,
+  height: 1024,
+  colors: {
+    border: 'black',
+    bg: 'red'
+  }
 };
 
 // console.log(options.colors.bg);
@@ -1226,15 +1226,21 @@ const options = {
 //     console.log(result);
 // }
 
-//! when it gives [object Object]
+//! when it gives [object Object] + counter++
+
+let counter = 0;
 
 for (let key in options) {
-    if (typeof(options [key]) === 'object') {
-        for (let i in options [key]) {
-        console.log(`Properity of ${i} is ${options [key] [i]}`);
-        }
-    } else {
-        let result = `Properity of ${key} is ${options [key]}`;
-        console.log(result);
+  if (typeof(options [key]) === 'object') {
+    for (let i in options [key]) {
+      console.log(`Properity of ${i} is ${options [key] [i]}`);
+      //counter++; // 2
     }
+  } else {
+    let result = `Properity of ${key} is ${options [key]}`;
+    console.log(result);
+    //counter++; // 3
+  }
+  counter++; // 4
 }
+console.log(counter);
