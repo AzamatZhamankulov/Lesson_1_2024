@@ -1205,6 +1205,82 @@
 
 //! Lesson 32 - Objects and Destruction of objects
 
+// const options = {
+//   name: 'test',
+//   width: 1024,
+//   height: 1024,
+//   colors: {
+//     border: 'black',
+//     bg: 'red'
+//   }
+// };
+
+// // console.log(options.colors.bg);
+
+// // delete options.colors.bg;
+
+// // console.log(options); // without colors.bg
+
+// // for (let key in options) {
+// //     let result = `Properity of ${key} is ${options [key]}`;
+// //     console.log(result);
+// // }
+
+// //! when it gives [object Object] + counter++
+
+// let counter = 0;
+
+// for (let key in options) {
+//   if (typeof(options [key]) === 'object') {
+//     for (let i in options [key]) {
+//       console.log(`Properity of ${i} is ${options [key] [i]}`);
+//       //counter++; // 2
+//     }
+//   } else {
+//     let result = `Properity of ${key} is ${options [key]}`;
+//     console.log(result);
+//     //counter++; // 3
+//   }
+//   counter++; // 4
+// }
+// console.log(counter);
+
+//! Object.keys(object) => gives massive with keys(.length) we can take length of massive
+
+// const options = {
+//   name: 'test',
+//   width: 1024,
+//   height: 1024,
+//   colors: {
+//     border: 'black',
+//     bg: 'red'
+//   }
+// };
+
+// let lengthOfObject = Object.keys(options).length;
+// console.log(lengthOfObject);
+
+
+//! In objects we can add as key functions as well
+
+// const options = {
+//   name: 'test',
+//   width: 1024,
+//   height: 1024,
+//   colors: {
+//     border: 'black',
+//     bg: 'red'
+//   },
+//   makeTest: function() {
+//     console.log("We can add to objects as key functions as well!")
+//   }
+// };
+
+// options.makeTest();
+
+
+//! Object destructization => to separate objects to small pieces by keys
+
 const options = {
   name: 'test',
   width: 1024,
@@ -1212,35 +1288,14 @@ const options = {
   colors: {
     border: 'black',
     bg: 'red'
+  },
+  makeTest: function() {
+    console.log("We can add to objects as key functions as well!")
   }
 };
 
-// console.log(options.colors.bg);
+options.makeTest();
 
-// delete options.colors.bg;
-
-// console.log(options); // without colors.bg
-
-// for (let key in options) {
-//     let result = `Properity of ${key} is ${options [key]}`;
-//     console.log(result);
-// }
-
-//! when it gives [object Object] + counter++
-
-let counter = 0;
-
-for (let key in options) {
-  if (typeof(options [key]) === 'object') {
-    for (let i in options [key]) {
-      console.log(`Properity of ${i} is ${options [key] [i]}`);
-      //counter++; // 2
-    }
-  } else {
-    let result = `Properity of ${key} is ${options [key]}`;
-    console.log(result);
-    //counter++; // 3
-  }
-  counter++; // 4
-}
-console.log(counter);
+const {border, bg} = options.colors;
+console.log(border); // black
+console.log(bg); // red
