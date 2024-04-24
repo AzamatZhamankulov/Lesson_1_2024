@@ -1175,29 +1175,48 @@
 
 //! Lesson 31 - Callback functions
 
-function first() {
-    // do something and it takes sometime to implement the function
-    setTimeout(function () {
-        console.log(1);
-    }, 500)
-}
+// function first() {
+//     // do something and it takes sometime to implement the function
+//     setTimeout(function () {
+//         console.log(1);
+//     }, 500)
+// }
 
-function second() {
-    console.log(2);
-}
+// function second() {
+//     console.log(2);
+// }
 
-first(); // because of setTimeout 500 it will give a result after 2nd function
-second(); // second function will implemented 1st 
+// first(); // because of setTimeout 500 it will give a result after 2nd function
+// second(); // second function will implemented 1st 
 
-//! so now callback functions can make to implement functions strictly by order
+// //!so now callback functions we can give as a argument of first function strictly by order
 
-function learnJS(lang, callback) {
-    console.log(`I learn: ${lang}`);
-    callback();
-}
+// function learnJS(lang, callback) {
+//     console.log(`I learn: ${lang}`);
+//     callback();
+// }
 
-function done() {
-    console.log('I have finished this course!');
-}
+// function done() {
+//     console.log('I have finished this course!');
+// }
 
-learnJS('JavaScript course', done);
+// learnJS('JavaScript course', done);
+
+
+//! Lesson 32 - Objects and Destruction of objects
+
+const options = {
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        bg: 'red'
+    }
+};
+
+console.log(options.colors.bg);
+
+delete options.colors.bg;
+
+console.log(options); // without colors.bg
