@@ -1258,7 +1258,7 @@
 // };
 
 // let lengthOfObject = Object.keys(options).length;
-// console.log(lengthOfObject);
+// console.log(lengthOfObject); // ['name', 'width', 'height', 'colors']
 
 
 //! In objects we can add as key functions as well
@@ -1281,21 +1281,34 @@
 
 //! Object destructization => to separate objects to small pieces by keys
 
-const options = {
-  name: 'test',
-  width: 1024,
-  height: 1024,
-  colors: {
-    border: 'black',
-    bg: 'red'
-  },
-  makeTest: function() {
-    console.log("We can add to objects as key functions as well!")
-  }
-};
+// const options = {
+//   name: 'test',
+//   width: 1024,
+//   height: 1024,
+//   colors: {
+//     border: 'black',
+//     bg: 'red'
+//   },
+//   makeTest: function() {
+//     console.log("We can add to objects as key functions as well!")
+//   }
+// };
 
-options.makeTest();
+// options.makeTest();
 
-const {border, bg} = options.colors;
-console.log(border); // black
-console.log(bg); // red
+// const {border, bg} = options.colors;
+// console.log(border); // black
+// console.log(bg); // red
+
+
+//! Lesson 33 => array & psevdomassive push => add to end; pop => delet from end
+
+const arr = [1, 2, 3, 6, 8];
+
+arr.pop(); //! delete from end of the array last index
+arr.push(10); //! add to end of the array 10
+
+console.log(arr);
+
+//! shift => delete from begining of the array first index
+//! unshift => add from begining of the array
