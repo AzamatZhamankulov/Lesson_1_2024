@@ -1303,12 +1303,43 @@
 
 //! Lesson 33 => array & psevdomassive push => add to end; pop => delet from end
 
-const arr = [1, 2, 3, 6, 8];
+// const arr = [1, 4, 3, 6, 8];
 
-arr.pop(); //! delete from end of the array last index
-arr.push(10); //! add to end of the array 10
+// arr.pop(); //! delete from end of the array last index
+// arr.push(10); //! add to end of the array 10
 
-console.log(arr);
+// console.log(arr);
 
 //! shift => delete from begining of the array first index
 //! unshift => add from begining of the array
+
+//todo iterration of massive with loop for()
+// const arr = [1, 4, 3, 6, 8];
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]); // 1, 4, 3, 6, 8
+// }
+
+//todo iterration of massive with loop for(of) we can stop with beark/ continue
+// const arr = [1, 4, 3, 6, 8];
+// for (let value of arr) {
+//     console.log(value); // 1, 4, 3, 6, 8
+// }
+
+//! lets check arr.length
+// const arr = [1, 4, 3, 6, 8];
+// // console.log(arr.length); // 5 => 0 1 2 3 4 => 4 + 1 //! last index + 1
+
+// arr[99] = 0;
+// console.log(arr.length); // 100 => 0 1 2 .... 99 + 1 => 100 //! last index + 1
+// console.log(arr); // [ 1, 4, 3, 6, 8, <94 empty items>, 0 ]
+
+//! method forEach()
+// const myArr = [1, 4, 3, 6, 8];
+// myArr.forEach(function(item, i, arr) {
+//     console.log(`${i}: ${item} inside of the array ${arr}`)
+// });
+
+//! arr.map // arr.every/some // arr.filter // arr.reduce
+
+
+
