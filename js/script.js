@@ -1341,5 +1341,31 @@
 
 //! arr.map // arr.every/some // arr.filter // arr.reduce
 
+//!String.split to identify how we can separate strings and get array
+// const str = prompt("Please insert your products", "");
+// const products = str.split(", ");
+// console.log(products); //['do', 'see', 'it', 'separates', 'with', 'comma',] what ever we write it separate with , 
 
+
+//! we can do revers get from array => string
+// const insertedNames = prompt("Please insert your products", "");
+// const invitedGuests = insertedNames.split(", ");
+// console.log(invitedGuests.join('; ')); // Azamat; Adil; Nurik; Azat it gives as string
+
+//! we can sort array with method arr.sort(); as string by alphabet
+// const arrOfstrings = ['Azamat', 'Adil', 'Azat', 'Nurik', 'Danchik', ' '];
+// arrOfstrings.sort();
+// console.log(arrOfstrings); // [' ', 'Adil', 'Azamat', 'Azat', 'Danchik', 'Nurik']
+
+// const arrOfNumbers = [8, 13, 11, 26, 75, 19];
+// arrOfNumbers.sort();
+// console.log(arrOfNumbers); //! [11, 13, 19, 26, 75, 8] as string by symbols
+
+//! we can add function to sort numbers in right way
+const arrOfNumbers = [8, 13, 11, 26, 75, 19];
+arrOfNumbers.sort(compareNum);
+console.log(arrOfNumbers); // [8, 11, 13, 19, 26, 75]
+function compareNum(a, b) {
+    return a - b;
+}
 
