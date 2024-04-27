@@ -1361,11 +1361,13 @@
 // arrOfNumbers.sort();
 // console.log(arrOfNumbers); //! [11, 13, 19, 26, 75, 8] as string by symbols
 
-//! we can add function to sort numbers in right way
-const arrOfNumbers = [8, 13, 11, 26, 75, 19];
-arrOfNumbers.sort(compareNum);
-console.log(arrOfNumbers); // [8, 11, 13, 19, 26, 75]
-function compareNum(a, b) {
-    return a - b;
-}
+//! we can add function to sort numbers in a right way
+// const arrOfNumbers = [8, 13, 11, 26, 75, 19];
+// arrOfNumbers.sort(compareNum);
+// console.log(arrOfNumbers); // [8, 11, 13, 19, 26, 75]
+// function compareNum(a, b) {
+//     return a - b;
+// }
 
+
+//! Lesson 
