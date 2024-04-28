@@ -1370,4 +1370,6 @@
 // }
 
 
-//! Lesson 
+//! Lesson 34 Algorythms in JS
+
+
