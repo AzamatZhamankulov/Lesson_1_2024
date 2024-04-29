@@ -1370,6 +1370,66 @@
 // }
 
 
-//! Lesson 34 Algorythms in JS
+//! Lesson 35 Passing by either reference or by value
 
+// let a = 5;
+// let b = a; // Passing by value
+// b = 10;
+// console.log(a); // 5
+
+//! exp 2
+// let a = 5;
+//     b = a // Passing by value
+// b = b + 5;
+
+// console.log(b); // 10
+// console.log(a); // 5
+
+
+//! passing by reference
+
+// let arr1 = [1, 2, 3];
+// let arr2 = arr1; // Passing by reference
+// arr2.push(4);
+// console.log(arr1); // Outputs: [1, 2, 3, 4]
+
+
+// const obj = {
+//     a: 5,
+//     b: 1
+// };
+// const copy = obj; // Passing by reference, so it is not a copy it is reference to obj
+// copy.a = 10;
+
+// console.log(copy); // { a: 10, b: 1 }
+// console.log(obj); // { a: 10, b: 1 }
+
+
+//! How to COPY obj and array
+
+function copyObj(mainObj) {
+    let objCopy = {};
+    let key;
+    for (key in mainObj) {
+        objCopy[key] = mainObj[key];
+    }
+    return objCopy;
+}
+
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x: 7,
+        y: 4
+    }
+};
+
+const newNumbers = copyObj(numbers);
+
+newNumbers.a = 10;
+newNumbers.c.x = 11;
+
+console.log(newNumbers); // { a: 10, b: 5, c: { x: 11, y: 4 } }
+console.log(numbers); //    { a: 2, b: 5, c: { x: 11, y: 4 } }
 
