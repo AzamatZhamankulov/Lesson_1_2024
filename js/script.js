@@ -1407,29 +1407,129 @@
 
 //! How to COPY obj and array
 
-function copyObj(mainObj) {
-    let objCopy = {};
-    let key;
-    for (key in mainObj) {
-        objCopy[key] = mainObj[key];
-    }
-    return objCopy;
-}
+// function copyObj(mainObj) {
+//     let objCopy = {};
+//     let key;
+//     for (key in mainObj) {
+//         objCopy[key] = mainObj[key];
+//     }
+//     return objCopy;
+// }
 
-const numbers = {
-    a: 2,
-    b: 5,
-    c: {
-        x: 7,
-        y: 4
-    }
-};
+// const numbers = {
+//     a: 2,
+//     b: 5,
+//     c: {
+//         x: 7,
+//         y: 4
+//     }
+// };
 
-const newNumbers = copyObj(numbers);
+// const newNumbers = copyObj(numbers);
 
-newNumbers.a = 10;
-newNumbers.c.x = 11;
+// newNumbers.a = 10;
+// newNumbers.c.x = 11;
 
-console.log(newNumbers); // { a: 10, b: 5, c: { x: 11, y: 4 } }
-console.log(numbers); //    { a: 2, b: 5, c: { x: 11, y: 4 } }
+// console.log(newNumbers); // { a: 10, b: 5, c: { x: 11, y: 4 } }
+// console.log(numbers); //    { a: 2, b: 5, c: { x: 11, y: 4 } }
 
+
+//! object.assign(obj1, obj2);
+// const numbers = {
+//     a: 2,
+//     b: 5,
+//     c: {
+//         x: 7,
+//         y: 4
+//     }
+// };
+
+// const additionalNumbers = {
+//     d: 17,
+//     e: 21
+// };
+
+// const addednumbers = Object.assign(numbers, additionalNumbers);
+// console.log(addednumbers); // { a: 2, b: 5, c: { x: 7, y: 4 }, d: 17, e: 21 }
+
+
+//! make clone with Obejct.assign({}, obj1);
+// const additionalNumbers = {
+//     d: 17,
+//     e: 21
+// };
+
+// const clone = Object.assign({}, additionalNumbers);
+// clone.d = 25;
+// console.log(additionalNumbers); // { d: 17, e: 21 }
+// console.log(clone); // { d: 25, e: 21 }
+
+
+//! COPY of array
+// const oldArray = ['a', 'b', 'c'];
+// const newArray = oldArray;
+
+// newArray[1] = 'changed index 1';
+// console.log(newArray); // [ 'a', 'changed index 1', 'c' ]
+// console.log(oldArray); // [ 'a', 'changed index 1', 'c' ]
+
+
+//! for array we can use array.slice();
+// const oldArray = ['a', 'b', 'c'];
+// const newArray = oldArray.slice();
+
+// newArray[1] = 'changed index 1';
+// console.log(newArray); // [ 'a', 'changed index 1', 'c' ]
+// console.log(oldArray); // [ 'a', 'b', 'c' ]
+
+
+//! another method of copy for array with ...array
+// const video = ['youtube', 'vimeo', 'rutube'],
+//       blogs = ['wordpress', 'livejournal', 'blogger'],
+//       internet = [...video, ...blogs, 'vk', 'facebook'];
+// console.log(internet); // all arrays will be in one array
+
+//! here practical use of ...array
+
+// function log(a, b, c) {
+//     console.log(a); // 2
+//     console.log(b); // 5
+//     console.log(c); // 7
+// }
+// const num = [2, 5, 7];
+
+// log(...num);
+
+
+//! sprade operator!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// const array = ['first', 'second'];
+// const newArray = [...array];
+// newArray[1] = 'it is third';
+
+// const obj1 = {
+//     one: 1,
+//     two: 2
+// };
+
+// const newObj2 = {...obj1};
+// newObj2.two = 5;
+
+// console.log(array); // [ 'first', 'second' ]
+// console.log(newArray); // [ 'first', 'it is third' ]
+// console.log(newObj2); // { one: 1, two: 5 }
+// console.log(obj1); // { one: 1, two: 2 }
+
+
+//! deep copy with using JSON.parse(JSON.stringify(object)):
+let obj3 = { 
+    a: 1,
+    b: { 
+      c: 2,
+    },
+  }
+  let newObj3 = JSON.parse(JSON.stringify(obj3));
+   
+obj3.b.c = 20;
+newObj3.b.c = 55;
+console.log(obj3); // { a: 1, b: { c: 20 } }
+console.log(newObj3); // { a: 1, b: { c: 55 } }
