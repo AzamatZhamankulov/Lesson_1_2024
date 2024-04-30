@@ -1501,7 +1501,7 @@
 // log(...num);
 
 
-//! sprade operator!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//! spread operator!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // const array = ['first', 'second'];
 // const newArray = [...array];
 // newArray[1] = 'it is third';
@@ -1521,15 +1521,83 @@
 
 
 //! deep copy with using JSON.parse(JSON.stringify(object)):
-let obj3 = { 
-    a: 1,
-    b: { 
-      c: 2,
-    },
-  }
-  let newObj3 = JSON.parse(JSON.stringify(obj3));
+// let obj3 = { 
+//     a: 1,
+//     b: { 
+//       c: 2,
+//     },
+//   }
+//   let newObj3 = JSON.parse(JSON.stringify(obj3));
    
-obj3.b.c = 20;
-newObj3.b.c = 55;
-console.log(obj3); // { a: 1, b: { c: 20 } }
-console.log(newObj3); // { a: 1, b: { c: 55 } }
+// obj3.b.c = 20;
+// newObj3.b.c = 55;
+// console.log(obj3); // { a: 1, b: { c: 20 } }
+// console.log(newObj3); // { a: 1, b: { c: 55 } }
+
+
+//! Practice exercise # 1
+//todo Напишите функцию showExperience, которая будет принимать в себя объект со всеми
+//todo данными и возвращать строку с опытом showExperience(personalPlanPeter) => '1 month'
+
+const personalPlanPeter = {
+  name: "Peter",
+  age: "29",
+  skills: {
+      languages: ['ru', 'eng'],
+      programmingLangs: {
+          js: '20%',
+          php: '10%'
+      },
+      exp: '1 month'
+  }
+};
+
+const showExperience = (plan) => {
+  const {exp} = plan.skills;
+  console.log(exp);
+  return exp;
+}
+showExperience(personalPlanPeter);
+
+
+//! Practice exercise # 2
+//todo 2) Напишите функцию showProgrammingLangs, которая будет принимать в себя объект
+//todo со всеми данными и возвращать строку в нужном виде.
+//todo showProgrammingLangs(personalPlanPeter) =>
+//todo "Язык js изучен на 20% Язык php изучен на 10%"
+
+const showProgrammingLangs = (plan) => {
+  const {programmingLangs} = plan.skills;
+  for (let key in programmingLangs) {
+    if (!programmingLangs[key]) {
+      let errorResult = 'Error!!!';
+      console.log(errorResult);
+      return errorResult;
+    } else {
+      let result = `Язык ${key} изучен на ${programmingLangs[key]} \n`;
+      console.log(result);
+    }
+  }
+}
+showProgrammingLangs(personalPlanPeter);
+
+
+//! Practice exercise # 2
+//todo 2) Создайте метод showAgeAndLangs внутри объекта personalPlanPeter. При его вызове
+//todo метод будет принимать в себя объект и возвращать строку в нужном виде.
+//todo personalPlanPeter.showAgeAndLangs(personalPlanPeter) =>
+//todo 'Мне 29 и я владею языками: RU ENG'
+
+const showAgeAndLangs = (plan) => {
+  const {age} = plan;
+  const {languages} = plan.skills;
+  let str = `Мне ${age} и я владею языками: `;
+
+  languages.forEach(function(lang) {
+    str += `${lang.toUpperCase()} `;
+  });
+  console.log(str);
+  return str;
+}
+
+showAgeAndLangs(personalPlanPeter);
