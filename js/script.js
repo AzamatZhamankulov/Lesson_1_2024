@@ -1609,22 +1609,53 @@
 //todo возвращать сообщение в нужном формате.
 //todo showFamily(family)  => 'Семья состоит из: Peter Ann Alex Linda'
 
-const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+// const family = ['Peter', 'Ann', 'Alex', 'Linda'];
 
-const showFamily = (arr) => {
+// const showFamily = (arr) => {
+//   if (!Array.isArray(arr)) {
+//     let errorMessage = 'Ошибка: переданный аргумент не является массивом';
+//     console.log(errorMessage);
+//     return errorMessage;
+//     } else if (arr.length === 0) {
+//       let emptyMessage = 'Семья пуста';
+//       console.log(emptyMessage);
+//       return emptyMessage;
+//     } else {
+//       const message = 'Семья состоит из: ' + arr.join(' ');
+//       console.log(message);
+//       return message;
+//     }
+// }
+// showFamily(family);
+
+
+//! Practice exercise Array # 1
+
+//todo напишите функцию standardizeStrings, которая будет принимать в себя массив строк и
+//todo будет выводить в консоль эти строки в нижнем регистре.
+//todo Пример: standardizeStrings(favoriteCities)  выведет в консоль
+//todo lisbon
+//todo rome
+//todo milan
+//todo dublin
+
+const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+const standardizeString = (arr) => {
   if (!Array.isArray(arr)) {
     let errorMessage = 'Ошибка: переданный аргумент не является массивом';
     console.log(errorMessage);
     return errorMessage;
-    } else if (arr.length === 0) {
-      let emptyMessage = 'Семья пуста';
-      console.log(emptyMessage);
-      return emptyMessage;
-    } else {
-      const message = 'Семья состоит из: ' + arr.join(' ');
-      console.log(message);
-      return message;
-    }
+  } else if (arr.length === 0) {
+    let emptyMessage = 'массив пустой';
+    console.log(emptyMessage);
+    return emptyMessage;
+  } else {
+    arr.forEach(city => {
+      let result = city.toLowerCase();
+      console.log(result);
+      return result;
+    });
+  }
 }
-showFamily(family);
-
+standardizeString(favoriteCities);
