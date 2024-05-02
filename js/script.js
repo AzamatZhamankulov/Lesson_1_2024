@@ -1639,23 +1639,53 @@
 //todo milan
 //todo dublin
 
-const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+// const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
 
-const standardizeString = (arr) => {
-  if (!Array.isArray(arr)) {
-    let errorMessage = 'Ошибка: переданный аргумент не является массивом';
+// const standardizeString = (arr) => {
+//   if (!Array.isArray(arr)) {
+//     let errorMessage = 'Ошибка: переданный аргумент не является массивом';
+//     console.log(errorMessage);
+//     return errorMessage;
+//   } else if (arr.length === 0) {
+//     let emptyMessage = 'массив пустой';
+//     console.log(emptyMessage);
+//     return emptyMessage;
+//   } else {
+//     arr.forEach(city => {
+//       let result = city.toLowerCase();
+//       console.log(result);
+//       return result;
+//     });
+//   }
+// }
+// standardizeString(favoriteCities);
+
+
+//! Practice exercise Array # 4
+
+//todo Напишите функцию reverse, которая принимает в себя строку и возвращает эту строку
+//todo в обратном порядке. const someString = 'This is some strange string';
+//todo reverse(someString) => 'gnirts egnarts emos si sihT'
+
+const someString = 'This is some strange string';
+
+const reverse = (str) => {
+  if (typeof str !== 'string') {
+    let errorMessage = 'Error!!! It is not a string!!!'
     console.log(errorMessage);
     return errorMessage;
-  } else if (arr.length === 0) {
-    let emptyMessage = 'массив пустой';
-    console.log(emptyMessage);
-    return emptyMessage;
   } else {
-    arr.forEach(city => {
-      let result = city.toLowerCase();
-      console.log(result);
-      return result;
-    });
+    let result = str.split('').reverse().join('');
+    console.log(result);
+    return result;
   }
 }
-standardizeString(favoriteCities);
+reverse(someString);
+
+
+//! Practice exercise Array # 4
+
+//todo Напишите функцию reverse, которая принимает в себя строку и возвращает
+
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
