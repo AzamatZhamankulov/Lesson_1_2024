@@ -1661,31 +1661,59 @@
 // standardizeString(favoriteCities);
 
 
-//! Practice exercise Array # 4
+//! Practice exercise Array # 2
 
 //todo Напишите функцию reverse, которая принимает в себя строку и возвращает эту строку
 //todo в обратном порядке. const someString = 'This is some strange string';
 //todo reverse(someString) => 'gnirts egnarts emos si sihT'
 
-const someString = 'This is some strange string';
+// const someString = 'This is some strange string';
 
-const reverse = (str) => {
-  if (typeof str !== 'string') {
-    let errorMessage = 'Error!!! It is not a string!!!'
-    console.log(errorMessage);
-    return errorMessage;
-  } else {
-    let result = str.split('').reverse().join('');
-    console.log(result);
-    return result;
-  }
-}
-reverse(someString);
+// const reverseStr = (str) => {
+//   if (typeof str !== 'string') {
+//     let errorMessage = 'Error!!! It is not a string!!!'
+//     console.log(errorMessage);
+//     return errorMessage;
+//   } else {
+//     let result = str.split('').reverse().join('');
+//     console.log(result);
+//     return result;
+//   }
+// }
+// reverseStr (someString);
 
 
-//! Practice exercise Array # 4
+//! Practice exercise Array # 3
 
-//todo Напишите функцию reverse, которая принимает в себя строку и возвращает
+//todo У вас есть банкомат, который выдает деньги из двух разных банков в разных валютах.
+//todo Один банк основной с baseCurrencies, второй additionalCurrencies:
+//todo Вам нужно создать главную функцию банкомата availableCurr, которая принимает два
+//todo аргумента: первый - это массив со всеми доступными валютами из двух банков сразу
+//todo (сейчас представим, что они не могут повторяться), второй - необязательный аргумент,
+//todo который указывает ту валюту, которая сейчас закончилась в банкомате.
+//todo Если массив в первом аргументе пустой - то функция возвращает строку
+//todo 'Нет доступных валют'. Функция возвращает строку в нужном виде.
+//todo Пример: availableCurr(['UAH', 'RUB', 'CNY'], 'CNY'); Вернет строку:
+// Доступные валюты:
+// UAH
+// RUB
+//todo Заметьте:- CNY (юань) исчез из списка валют, значит такая валюта закончилась
+//todo - После валюты: стоит перенос строки \n, и после каждой валюты тоже.
+//todo - Данные для первого аргумента должны приходить сразу из двух банков,
+//todo причем сначала baseCurrencies, потом additionalCurrencies по порядку
 
 const baseCurrencies = ['USD', 'EUR'];
 const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+const availableCurr = (arr, missingCurr) => {
+  let resultStr = 'Available currencies are:\n';
+  for (let i =0; i < arr.length; i++) {
+    if (arr[i] === missingCurr) {
+      continue;
+    } else {
+      resultStr += `${arr[i]}\n`
+    }
+  }
+  console.log(resultStr);
+}
+availableCurr([...baseCurrencies, ...additionalCurrencies], 'RUB');
