@@ -1702,18 +1702,41 @@
 //todo - Данные для первого аргумента должны приходить сразу из двух банков,
 //todo причем сначала baseCurrencies, потом additionalCurrencies по порядку
 
+// const baseCurrencies = ['USD', 'EUR'];
+// const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+// const availableCurr = (arr, missingCurr) => {
+//   let resultStr = 'Available currencies are:\n';
+//   for (let i =0; i < arr.length; i++) {
+//     if (arr[i] === missingCurr) {
+//       continue;
+//     } else {
+//       resultStr += `${arr[i]}\n`
+//       console.log(resultStr);
+//     }
+//   }
+// }
+// availableCurr([...baseCurrencies, ...additionalCurrencies], 'USD');
+
+//! with arr.forEach(func => {})
+
 const baseCurrencies = ['USD', 'EUR'];
 const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
 
 const availableCurr = (arr, missingCurr) => {
-  let resultStr = 'Available currencies are:\n';
-  for (let i =0; i < arr.length; i++) {
-    if (arr[i] === missingCurr) {
-      continue;
-    } else {
-      resultStr += `${arr[i]}\n`
-    }
+  if (arr.length === 0) {
+    let errorMessage = 'Нет доступных валют';
+    console.log(errorMessage);
+    return errorMessage;
   }
-  console.log(resultStr);
+
+  let resultStr = 'Available currencies are:\n';
+  arr.forEach(currency => {
+    if (currency !== missingCurr) {
+      resultStr += `${currency} \n`;
+      console.log(resultStr);
+      return resultStr;
+    }
+  });
 }
 availableCurr([...baseCurrencies, ...additionalCurrencies], 'RUB');
