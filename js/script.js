@@ -1734,9 +1734,9 @@ const availableCurr = (arr, missingCurr) => {
   arr.forEach(currency => {
     if (currency !== missingCurr) {
       resultStr += `${currency} \n`;
-      console.log(resultStr);
-      return resultStr;
     }
   });
+  console.log(resultStr);
+  return resultStr;
 }
 availableCurr([...baseCurrencies, ...additionalCurrencies], 'RUB');
