@@ -1787,3 +1787,44 @@
 //   return resultStr;
 // }
 // availableCurr([...baseCurrencies, ...additionalCurrencies], 'RUB');
+
+
+//! arr.map !!!!!!!!!!!!!!!!!!!!!!!!!!!
+// map не применим к объектам напрямую
+// Но можно использовать его с массивом, созданным на основе ключей, значений или
+// записей объекта
+// const person = {
+//   name: 'John',
+//   age: '30'
+// };
+
+// const keys = Object.keys(person);
+// const values = Object.values(person);
+// const entries = Object.entries(person);
+
+// console.log(keys.map(key => key.toUpperCase())); // Выводит: ['NAME', 'AGE']
+// console.log(values.map(value => value * 2)); // Выводит: [NaN, 60] (так как имя не может быть умножено на 2)
+// console.log(entries.map(([key, value]) => ({ [key]: value }))); // Выводит: [{ name: 'John' }, { age: 30 }]
+
+
+//! arr.forEach !!!!!!!!!!!!!!!!!!!!!1
+// const person = {
+//   name: 'John',
+//   age: '30'
+// };
+
+// Object.keys(person).forEach(key => console.log(key)); // Выводит: name, age
+
+//! map and forEach => В этом примере, сначала мы используем метод map, чтобы преобразовать
+//! каждый элемент массива values к верхнему регистру. Затем, с помощью метода forEach,
+//! мы выполняем операцию console.log для каждого элемента нового массива.
+//! Результатом будет вывод на консоль элементов массива values в верхнем регистру.
+
+const person = {
+  name: 'John',
+  age: '30'
+};
+
+const values = Object.values(person);
+values.map(value => value.toUpperCase()).forEach(value => console.log(value));
+  
