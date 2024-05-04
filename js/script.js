@@ -1546,7 +1546,8 @@
 //       languages: ['ru', 'eng'],
 //       programmingLangs: {
 //           js: '20%',
-//           php: '10%'
+//           php: '10%',
+//           ruby: '30%'
 //       },
 //       exp: '1 month'
 //   }
@@ -1568,21 +1569,23 @@
 
 // const showProgrammingLangs = (plan) => {
 //   const {programmingLangs} = plan.skills;
+//   let result = '';
 //   for (let key in programmingLangs) {
 //     if (!programmingLangs[key]) {
 //       let errorResult = 'Error!!!';
 //       console.log(errorResult);
 //       return errorResult;
 //     } else {
-//       let result = `Язык ${key} изучен на ${programmingLangs[key]} \n`;
-//       console.log(result);
+//       result += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
 //     }
 //   }
+//   console.log(result);
+//   return result;
 // }
 // showProgrammingLangs(personalPlanPeter);
 
 
-//! Practice exercise Objects # 2
+//! Practice exercise Objects solving as a function # 2
 //todo 2) Создайте метод showAgeAndLangs внутри объекта personalPlanPeter. При его вызове
 //todo метод будет принимать в себя объект и возвращать строку в нужном виде.
 //todo personalPlanPeter.showAgeAndLangs(personalPlanPeter) =>
@@ -1591,19 +1594,63 @@
 // const showAgeAndLangs = (plan) => {
 //   const {age} = plan;
 //   const {languages} = plan.skills;
-//   let str = `Мне ${age} и я владею языками: `;
+//   let resultStr = `Мне ${age} и я владею языками: `;
 
 //   languages.forEach(function(lang) {
-//     str += `${lang.toUpperCase()} `;
+//     resultStr += `${lang.toUpperCase()} `;
 //   });
-//   console.log(str);
-//   return str;
+//   console.log(resultStr);
+//   return resultStr;
 // }
 
 // showAgeAndLangs(personalPlanPeter);
 
+//! Practice exercise Objects solving as a method inside of the main object # 2
+//todo Вот как можно добавить метод showAgeAndLangs к объекту personalPlanPeter:
 
-//! Practice exercise Array # 1
+// const personalPlanPeter = {
+//   name: "Peter",
+//   age: "29",
+//   skills: {
+//     languages: ['ru', 'eng', 'ind'],
+//     programmingLangs: {
+//       js: '20%',
+//       php: '10%',
+//       ruby: '30%'
+//     },
+//     exp: '1 month'
+//   },
+//   showAgeAndLangs: function(obj) {
+//     if (!obj || !obj.age || !obj.skills || !obj.skills.languages || !Array.isArray(obj.skills.languages)) {
+//       return "Ошибка: неправильный формат объекта";
+//     }
+    
+//     const age = obj.age;
+//     const languages = obj.skills.languages.map(lang => lang.toUpperCase()).join(' ');
+
+//     return `Мне ${age} и я владею языками: ${languages}`;
+//   }
+// };
+// console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter)); // Выводит: 'Мне 29 и я владею языками: RU ENG IND'
+
+//! arr.map(func => )
+// const numbers = [1, 2, 3];
+// const doubledNumbers = numbers.map(num => num * 2);
+// console.log(doubledNumbers); // Выводит: [2, 4, 6]
+// console.log(numbers); // Выводит: [1, 2, 3] (исходный массив остается неизменным)
+
+//! arr.forEach => result will be in each line separate
+// const numbers = [1, 2, 3];
+// numbers.forEach(num => console.log(num * 2)); //! Выводит по строчно: 2, 4, 6
+// console.log(numbers); // Выводит: [1, 2, 3] (исходный массив остается неизменным)
+
+//! arr.forEach
+// const numbers = [1, 2, 3];
+// let numForEach = numbers.forEach(num => num * 2);
+// console.log(numForEach) //! Выводит: undefined
+// console.log(numbers); // Выводит: [1, 2, 3] (исходный массив остается неизменным)
+
+//! Practice exercise Array # 3
 
 //todo Напишите функцию showFamily, которая будет принимать в себя массив строк и
 //todo возвращать сообщение в нужном формате.
@@ -1629,7 +1676,7 @@
 // showFamily(family);
 
 
-//! Practice exercise Array # 1
+//! Practice exercise Array # 4
 
 //todo напишите функцию standardizeStrings, которая будет принимать в себя массив строк и
 //todo будет выводить в консоль эти строки в нижнем регистре.
@@ -1661,7 +1708,7 @@
 // standardizeString(favoriteCities);
 
 
-//! Practice exercise Array # 2
+//! Practice exercise Array # 5
 
 //todo Напишите функцию reverse, которая принимает в себя строку и возвращает эту строку
 //todo в обратном порядке. const someString = 'This is some strange string';
@@ -1683,7 +1730,7 @@
 // reverseStr (someString);
 
 
-//! Practice exercise Array # 3
+//! Practice exercise Array # 6
 
 //todo У вас есть банкомат, который выдает деньги из двух разных банков в разных валютах.
 //todo Один банк основной с baseCurrencies, второй additionalCurrencies:
@@ -1720,23 +1767,23 @@
 
 //! with arr.forEach(func => {})
 
-const baseCurrencies = ['USD', 'EUR'];
-const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+// const baseCurrencies = ['USD', 'EUR'];
+// const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
 
-const availableCurr = (arr, missingCurr) => {
-  if (arr.length === 0) {
-    let errorMessage = 'Нет доступных валют';
-    console.log(errorMessage);
-    return errorMessage;
-  }
+// const availableCurr = (arr, missingCurr) => {
+//   if (arr.length === 0) {
+//     let errorMessage = 'Нет доступных валют';
+//     console.log(errorMessage);
+//     return errorMessage;
+//   }
 
-  let resultStr = 'Available currencies are:\n';
-  arr.forEach(currency => {
-    if (currency !== missingCurr) {
-      resultStr += `${currency} \n`;
-    }
-  });
-  console.log(resultStr);
-  return resultStr;
-}
-availableCurr([...baseCurrencies, ...additionalCurrencies], 'RUB');
+//   let resultStr = 'Available currencies are:\n';
+//   arr.forEach(currency => {
+//     if (currency !== missingCurr) {
+//       resultStr += `${currency} \n`;
+//     }
+//   });
+//   console.log(resultStr);
+//   return resultStr;
+// }
+// availableCurr([...baseCurrencies, ...additionalCurrencies], 'RUB');
