@@ -1838,4 +1838,52 @@
 
 // const values = Object.values(person);
 // values.map(value => value.toUpperCase()).forEach(value => console.log(value));
-  
+
+
+//! OOP Prototype Orientated Inheritance
+
+// let str = 'someStr';
+// let strObj = new String(str);
+
+// console.log(str);
+// console.log(strObj);
+
+// console.dir([1,2,3]);
+
+// const personalData = {
+//   name: 'John',
+//   age: 30,
+//   address: {
+//     city: 'New York',
+//     country: 'USA'
+//   }
+// };
+// console.dir(personalData);
+// console.log(personalData);
+
+const soldier = {
+  health: 400,
+  armor: 100,
+  level: 3,
+  sayHello: function() {
+    console.log('Hello, I am ...');
+  }
+};
+
+// const john = {
+//   health: 100,
+//   armor: 50
+// };
+
+// // john.__proto__ = soldier; // its old way DON'T USE IT
+
+// Object.setPrototypeOf(john, soldier); //!!!!!!!!!!!!!!!!
+
+// console.log(john);
+// console.log(john.level);
+// john.sayHello();
+
+//! how it is in normal practice
+
+// const john = Object.create(soldier);
+// john.sayHello();
