@@ -1687,6 +1687,7 @@
 //todo dublin
 
 // const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+// let resultCities = '';
 
 // const standardizeString = (arr) => {
 //   if (!Array.isArray(arr)) {
@@ -1699,13 +1700,23 @@
 //     return emptyMessage;
 //   } else {
 //     arr.forEach(city => {
-//       let result = city.toLowerCase();
-//       console.log(result);
-//       return result;
+//       resultCities +=`${city.toLowerCase()}\n`;
 //     });
 //   }
+//   return resultCities;
 // }
 // standardizeString(favoriteCities);
+// console.log(resultCities);
+
+//! shot way of solution !!!!!!!!!!!
+
+// const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+// const standardizeStrings = (arr) => {
+//     arr.forEach(city => console.log(city.toLowerCase()));
+// }
+// standardizeStrings(favoriteCities);
+
 
 
 //! Practice exercise Array # 5
@@ -1820,11 +1831,11 @@
 //! мы выполняем операцию console.log для каждого элемента нового массива.
 //! Результатом будет вывод на консоль элементов массива values в верхнем регистру.
 
-const person = {
-  name: 'John',
-  age: '30'
-};
+// const person = {
+//   name: 'John',
+//   age: '30'
+// };
 
-const values = Object.values(person);
-values.map(value => value.toUpperCase()).forEach(value => console.log(value));
+// const values = Object.values(person);
+// values.map(value => value.toUpperCase()).forEach(value => console.log(value));
   
