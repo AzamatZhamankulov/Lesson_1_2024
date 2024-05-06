@@ -1994,3 +1994,4 @@ const personalMovieDB = {
 
 console.log(personalMovieDB.start());
 console.log(personalMovieDB.count);
+console.log(personalMovieDB);
