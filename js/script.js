@@ -1128,7 +1128,7 @@
 
 // function rememberMyFilms(){
 //     for (let i = 0; i < 2; i++) {
-//         const a = prompt('Insert title of one of the last seen films', '').trim(), // delete for empty space
+//         const a = prompt('Insert title of one of the last seen films', '').trim(), //!! delete for empty space
 //               b = +prompt('Please rate the film in scale of 1 - 10', '');
         
 //         if (a != null && b != null && a != '' && b != '' && a.length < 50) {
@@ -1164,12 +1164,33 @@
 // }
 // showMyDB(personalMovieDB.privat);
 
+// function toggleVisibleMyDB () {
+//     if (personalMovieDB.privat) {
+//         personalMovieDB.privat = false;
+//     } else {
+//         personalMovieDB.privat = true;
+//     }
+// }
+
+// toggleVisibleMyDB()
+
 
 // function writeYourGenres() {
 //     for (let i = 1; i <= 3; i++) {
-//         personalMovieDB.genres[i - 1] = prompt(`Your favorite genre is under number ${i}`).trim();
+//         let genre = prompt(`Please insert your favorite genre is under number ${i}`).trim();
+        
+//         if (genre === '' || genre == null) {
+//             console.log('You inserted wrong data please check again!');
+//             i--;
+//         } else {
+//             personalMovieDB.genres[i - 1] = genre;
+//         }
 //     }
+//     personalMovieDB.genres.forEach((item, i) => {
+//         console.log(`User's favorite genre number ${i + 1} - is ${item}`)
+//     });
 // }
+
 // writeYourGenres();
 
 
@@ -1861,14 +1882,14 @@
 // console.dir(personalData);
 // console.log(personalData);
 
-const soldier = {
-  health: 400,
-  armor: 100,
-  level: 3,
-  sayHello: function() {
-    console.log('Hello, I am ...');
-  }
-};
+// const soldier = {
+//   health: 400,
+//   armor: 100,
+//   level: 3,
+//   sayHello: function() {
+//     console.log('Hello, I am ...');
+//   }
+// };
 
 // const john = {
 //   health: 100,
@@ -1887,3 +1908,89 @@ const soldier = {
 
 // const john = Object.create(soldier);
 // john.sayHello();
+
+//! Lesson 37 Practice # 1
+//todo 1) У нас уже есть рабочее приложение, состоящее из отдельных функций. Представьте,
+//todo что перед вами стоит задача переписать его так, чтобы все функции стали методами
+//todo объекта personalMovieDB. Такое случается в реальных продуктах при смене
+//todo технологий или подхода к архитектуре программы
+
+//todo 2) Создать метод toggleVisibleMyDB, который при вызове будет проверять свойство
+//todo privat. Если оно false - он переключает его в true, если true - переключает в false.
+//todo Протестировать вместе с showMyDB.
+
+//todo 3) В методе writeYourGenres запретить пользователю нажать кнопку "отмена" или
+//todo оставлять пустую строку. Если он это сделал - возвращать его к этому же вопросу.
+//todo После того, как все жанры введены - при помощи метода forEach вывести в консоль
+//todo сообщения в таком виде: "Любимый жанр #(номер по порядку, начиная с 1) -
+//todo это (название из массива)"
+
+const personalMovieDB = {
+    count: 0,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false,
+    start: function() {
+        personalMovieDB.count = +prompt('How many films did you watch?', '');
+        
+        while (this.count == '' || this.count == null || isNaN(this.count)) {
+            this.count = +prompt('Please insert number of films you watched!', '');
+        }
+    },
+    rememberMyFilms: function() {
+        for (let i = 0; i < 2; i++) {
+            const a = prompt('Insert title of one of the last seen films', ''),
+                  b = +prompt('Please rate the film in scale of 1 - 10', '');
+                  
+            if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+                personalMovieDB.movies[a] = b;
+                console.log('Done!');
+            } else {
+                console.log('Error');
+                i--;
+            }
+        }
+    },
+    detectPersonalLevel: function() {
+        if (this.count < 10) {
+            console.log('You are an amature, too less films has been watched.');
+        } else if (this.count >= 10 && this.count < 30) {
+            console.log('You are a classic watcher!');
+        } else if (this.count >= 30) {
+            console.log('You are a kinoman!');
+        } else {
+            console.log('There is something went wrong!');
+        }
+    },
+    showMyDB: function(hidden) {
+        if (!hidden) {
+            console.log(personalMovieDB);
+        }
+    },
+    toggleVisibleMyDB: function() {
+        if (this.privat == true) {
+            this.privat = false;
+        } else {
+            this.privat = true;
+        }
+    },
+    writeYourGenres: function() {
+        for (let i = 1; i <= 3; i++) {
+            let genre = prompt(`Your favorite genre is under number ${i}`).trim();
+
+            if (genre === '' || genre == null) {
+                console.log('You inserted wrong data or empty data');
+                i--;
+            } else {
+                personalMovieDB.genres[i - 1] = genre;
+            }
+        }
+        personalMovieDB.genres.forEach((item, i) => {
+            console.log(`Favorite genre number ${i + 1} - is ${item}`)
+        });
+    }
+};
+
+console.log(personalMovieDB.start());
+console.log(personalMovieDB.count);
