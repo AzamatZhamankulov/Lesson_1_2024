@@ -1932,7 +1932,7 @@ const personalMovieDB = {
     genres: [],
     privat: false,
     start: function() {
-        personalMovieDB.count = +prompt('How many films did you watch?', '');
+        this.count = +prompt('How many films did you watch?', '');
         
         while (this.count == '' || this.count == null || isNaN(this.count)) {
             this.count = +prompt('Please insert number of films you watched!', '');
@@ -1940,11 +1940,11 @@ const personalMovieDB = {
     },
     rememberMyFilms: function() {
         for (let i = 0; i < 2; i++) {
-            const a = prompt('Insert title of one of the last seen films', ''),
+            const a = prompt('Insert title of one of the last seen films', '').toLowerCase().trim(),
                   b = +prompt('Please rate the film in scale of 1 - 10', '');
                   
             if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-                personalMovieDB.movies[a] = b;
+                this.movies[a] = b;
                 console.log('Done!');
             } else {
                 console.log('Error');
@@ -1965,7 +1965,7 @@ const personalMovieDB = {
     },
     showMyDB: function(hidden) {
         if (!hidden) {
-            console.log(personalMovieDB);
+            console.log(this);
         }
     },
     toggleVisibleMyDB: function() {
@@ -1977,21 +1977,25 @@ const personalMovieDB = {
     },
     writeYourGenres: function() {
         for (let i = 1; i <= 3; i++) {
-            let genre = prompt(`Your favorite genre is under number ${i}`).trim();
+            let genre = prompt(`Your favorite genre is under number ${i}`).toLowerCase().trim();
 
             if (genre === '' || genre == null) {
                 console.log('You inserted wrong data or empty data');
                 i--;
             } else {
-                personalMovieDB.genres[i - 1] = genre;
+                this.genres[i - 1] = genre;
             }
         }
-        personalMovieDB.genres.forEach((item, i) => {
+        this.genres.forEach((item, i) => {
             console.log(`Favorite genre number ${i + 1} - is ${item}`)
         });
     }
 };
 
 console.log(personalMovieDB.start());
-console.log(personalMovieDB.count);
-console.log(personalMovieDB);
+console.log(personalMovieDB.rememberMyFilms());
+console.log(personalMovieDB.detectPersonalLevel());
+console.log(personalMovieDB.showMyDB());
+console.log(personalMovieDB.toggleVisibleMyDB());
+console.log(personalMovieDB.writeYourGenres());
+console.log(personalMovieDB.showMyDB());
