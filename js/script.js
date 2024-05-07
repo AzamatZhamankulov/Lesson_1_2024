@@ -1985,7 +1985,22 @@ const personalMovieDB = {
             } else {
                 this.genres[i - 1] = genre;
             }
-        }
+
+            //! тернарный оператор => ternary operator
+            // (!genre || genre == null) ? (console.log('You inserted wrong data or empty data'), i--) : this.genres[i - 1] = genre;
+
+            //! alternative version with genres.split
+        // for (let i = 1; i < 2; i++) {
+        //     let genres = prompt(`Please insert favorite genres splited with comma`).toLocaleLowerCase().trim();
+        //     if (genres === '' || genres == null) {
+        //         console.log('Sorry, You have inserted wrong data! Try again!');
+        //         i--;
+        //     } else {
+        //         this.genres = genres.split(', ');
+        //         this.genres.sort(); // to sort by alphabet
+        //     }
+        // }
+       }
         this.genres.forEach((item, i) => {
             console.log(`Favorite genre number ${i + 1} - is ${item}`)
         });
