@@ -2057,25 +2057,19 @@ const shoppingMallData = {
     budget: 50000
 }
 
-let result = '';
+let result;
 
 const isBudgetEnough = (data) => {
     const totalArea = data.shops.reduce((acc, shop) => acc +(shop.width * shop.length), 0);
     const totalVolume = totalArea * data.height;
     const totalCost = totalVolume * data.moneyPer1m3;
-    // console.log(totalArea);
-    // console.log(totalVolume);
-    // console.log(totalCost);
 
     if (totalCost <= data.budget) {
-        result += 'The budget is ENOUGH!'
-        console.log(result);
-        return result;
+        result = 'The budget is ENOUGH!'
     } else {
-        result += 'The budget is NOT enough!!!'
-        console.log(result);
-        return result;
+        result = 'The budget is NOT enough!!!'
     }
-
+    console.log(result);
+    return result;
 }
 isBudgetEnough(shoppingMallData);
