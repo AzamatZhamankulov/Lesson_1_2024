@@ -2015,7 +2015,7 @@
 // console.log(personalMovieDB.writeYourGenres());
 
 
-//! Practical excercise: 13
+//! Practical excercise: 13 with method arr.reduce((acc, current) => acc + (current.a * current.b), 0); 
 //todo У вас есть небольшой кусочек данных о торговом центре, которые записаны в объекте
 //todo shoppingMallData. Они содержат массив с данными о магазинах, где указана длина и
 //todo ширина помещения; высоту помещения; стоимость отопления за 1 кубический метр и
@@ -2057,21 +2057,25 @@ const shoppingMallData = {
     budget: 50000
 }
 
-function isBudgetEnough(data) {
-    // 1. Вычисляем общую площадь всех магазинов
-    const totalArea = data.shops.reduce((acc, shop) => acc + (shop.width * shop.length), 0);
-    
-    // 2. Вычисляем общий объем торгового центра
-    const totalVolume = totalArea * data.height;
-    
-    // 3. Определяем, хватает ли бюджета на оплату такого объема
-    const totalCost = totalVolume * data.moneyPer1m3;
-    
-    if (totalCost <= data.budget) {
-        return console.log('Бюджета достаточно');
-    } else {
-        return console.log('Бюджета недостаточно');
-    }
-}
+let result = '';
 
+const isBudgetEnough = (data) => {
+    const totalArea = data.shops.reduce((acc, shop) => acc +(shop.width * shop.length), 0);
+    const totalVolume = totalArea * data.height;
+    const totalCost = totalVolume * data.moneyPer1m3;
+    // console.log(totalArea);
+    // console.log(totalVolume);
+    // console.log(totalCost);
+
+    if (totalCost <= data.budget) {
+        result += 'The budget is ENOUGH!'
+        console.log(result);
+        return result;
+    } else {
+        result += 'The budget is NOT enough!!!'
+        console.log(result);
+        return result;
+    }
+
+}
 isBudgetEnough(shoppingMallData);
