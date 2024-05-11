@@ -2033,43 +2033,88 @@
 //todo - функция должна продолжать работать, даже если изменяется количество магазинов,
 //todo высота, бюджет или подставляется вообще другой объект.
 
-const shoppingMallData = {
-    shops: [
-        {
-            width: 10,
-            length: 5
-        },
-        {
-            width: 15,
-            length: 7
-        },
-        {
-            width: 20,
-            length: 5
-        },
-        {
-            width: 8,
-            length: 10
-        }
-    ],
-    height: 5,
-    moneyPer1m3: 30,
-    budget: 50000
-}
+// const shoppingMallData = {
+//     shops: [
+//         {
+//             width: 10,
+//             length: 5
+//         },
+//         {
+//             width: 15,
+//             length: 7
+//         },
+//         {
+//             width: 20,
+//             length: 5
+//         },
+//         {
+//             width: 8,
+//             length: 10
+//         }
+//     ],
+//     height: 5,
+//     moneyPer1m3: 30,
+//     budget: 50000
+// }
 
-let result;
+// let result;
 
-const isBudgetEnough = (data) => {
-    const totalArea = data.shops.reduce((acc, shop) => acc +(shop.width * shop.length), 0);
-    const totalVolume = totalArea * data.height;
-    const totalCost = totalVolume * data.moneyPer1m3;
+// const isBudgetEnough = (data) => {
+//     const totalArea = data.shops.reduce((acc, shop) => acc +(shop.width * shop.length), 0);
+//     const totalVolume = totalArea * data.height;
+//     const totalCost = totalVolume * data.moneyPer1m3;
 
-    if (totalCost <= data.budget) {
-        result = 'The budget is ENOUGH!'
-    } else {
-        result = 'The budget is NOT enough!!!'
-    }
-    console.log(result);
-    return result;
-}
-isBudgetEnough(shoppingMallData);
+//     if (totalCost <= data.budget) {
+//         result = 'The budget is ENOUGH!'
+//     } else {
+//         result = 'The budget is NOT enough!!!'
+//     }
+//     console.log(result);
+//     return result;
+// }
+// isBudgetEnough(shoppingMallData);
+
+//! more practice with .split and .join
+
+// const strExample = 'my-short-string';
+
+// const camelize = (str) => {
+//     let strToArray = str.split('-');
+//     let arrToUpperCase = strToArray.map((word, index) => {
+//         if (index === 0) {
+//             return word;
+//         } else {
+//             return word[0].toUpperCase() + word.slice(1);
+//         }
+//     });
+//     let result = arrToUpperCase.join('');
+//     console.log(result);
+//     return result;
+// }
+// camelize(strExample);
+
+//! SHORT way
+
+// const strExample = 'my-short-string-done-correctly';
+
+// const camelize = (str) => {
+//     console.log(str.split('-').map((word, index) => {
+//         if (index === 0) {
+//             return word;
+//         } else {
+//             return word[0].toUpperCase() + word.slice(1);
+//         }
+//     }).join(''))
+// }
+
+// camelize(strExample);
+
+//! MORE SHORT way !!!!!!!
+
+// const strExample = 'my-short-string-done-correctly-look-at-this';
+
+// const cemalize = (str) => {
+//     return console.log(str.split('-').map((word, index) => index == 0 ? word
+//                         : word[0].toUpperCase() + word.slice(1)).join(''))
+// }
+// cemalize(strExample);
