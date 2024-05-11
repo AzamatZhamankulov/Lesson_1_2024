@@ -2074,12 +2074,18 @@
 // }
 // isBudgetEnough(shoppingMallData);
 
+
+//todo Write the function camelize(str) that changes dash-separated words like
+//todo “my-short-string” into camel-cased “myShortString”. That is: removes all dashes,
+//todo each word after dash becomes uppercased.
+
 //! more practice with .split and .join
 
 // const strExample = 'my-short-string';
 
 // const camelize = (str) => {
 //     let strToArray = str.split('-');
+//     console.log(strToArray);
 //     let arrToUpperCase = strToArray.map((word, index) => {
 //         if (index === 0) {
 //             return word;
@@ -2114,7 +2120,39 @@
 // const strExample = 'my-short-string-done-correctly-look-at-this';
 
 // const cemalize = (str) => {
-//     return console.log(str.split('-').map((word, index) => index == 0 ? word
-//                         : word[0].toUpperCase() + word.slice(1)).join(''))
+//     return console.log(str.split('-').map((word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)).join(''))
 // }
 // cemalize(strExample);
+
+
+//todo Write a function filterRange(arr, a, b) that gets an array arr, looks for elements
+//todo with values higher or equal to a and lower or equal to b and return a result as
+//todo an array. The function should not modify the array. It should return the new array.
+
+// let arr1 = [5, 3, 8, 1];
+
+// const filterRange = (arr, a, b) => {
+//     let result = [];
+//     arr1.map((item) => {
+//         if (item >= a && item <= b) {
+//             result.push(item)  
+//         }
+//     })
+//     console.log(result)
+//     return result;
+// }
+// filterRange(arr1, 1, 4);
+
+//! Short way with arr.filter!!!!!!!!!!!!!!!!!!
+// let arr1 = [5, 3, 8, 1];
+
+// const filterRange = (arr, a, b) => (arr.filter((item) => item >= a && item <= b ))
+// console.log(filterRange(arr1, 1, 4));
+// console.log(arr1);
+
+
+//todo Write a function filterRangeInPlace(arr, a, b) that gets an array arr and removes
+//todo from it all values except those that are between a and b. The test is: a ≤ arr[i] ≤ b.
+//todo The function should only modify the array. It should not return anything.
+
+let arr1 = [5, 3, 8, 1];
