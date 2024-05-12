@@ -2204,3 +2204,52 @@
 // sortArray(arrStr);
 // console.log(arrSorted);
 // console.log(arrStr);
+
+
+//! Creat an extandable calculator
+//todo Create a constructor function Calculator that creates “extendable” calculator
+//todo objects. The task consists of two parts.
+//todo 1) First, implement the method calculate(str) that takes a string like "1 + 2"
+//todo in the format “NUMBER operator NUMBER” (space-delimited) and returns the result.
+//todo Should understand plus + and minus -.
+
+// const Calculator = {
+//     calculate: function(str) {
+//         return Number(str);
+//     } 
+// }
+// console.log(Calculator.calculate('1+3'));
+
+//!!!!!!!!!!!!!!!!!!!!!Class Calculator!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+// class Calculator {
+//     calculate(str) {
+//         const [num1, operator, num2] = str.split(/\s+/);
+//         const n1 = Number(num1);
+//         const n2 = Number(num2);
+
+//         switch (operator) {
+//             case '+':
+//                 return n1 + n2;
+//             case '-':
+//                 return n1 - n2;
+//             case '*':
+//                 return n1 * n2;
+//             case '/':
+//                 return n1 / n2;
+//             case '**':
+//                 return n1 ** n2;
+//             default:
+//                console.log('Invalid operator!!!');
+//         }
+//     }
+// }
+
+// let calc = new Calculator();
+// console.log(calc.calculate("3 + 2"));
+
+
+//! Split every SYMBOL separately except space!!!!!!!!!!!!!!!
+// const str = "11 - 30    * 4 ARAFSFSfdsf      fsf JavaScript";
+// const parts = str.split(/\s+/).filter(symbol => symbol.trim() !== '');
+// console.log(parts);
