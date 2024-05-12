@@ -2155,4 +2155,37 @@
 //todo from it all values except those that are between a and b. The test is: a ≤ arr[i] ≤ b.
 //todo The function should only modify the array. It should not return anything.
 
-let arr1 = [5, 3, 8, 1];
+//! solving with arr.forEach((num, index) =>)
+
+// let arr1 = [5, 3, 8, 1];
+
+// const filterRangeInPlace = (arr, a, b) => {
+//     arr.forEach((item, index) => {
+//         if (item < a || item > b) {
+//             arr.splice(index, 1); // Remove the element at index
+//         }
+//     });
+// }
+// filterRangeInPlace(arr1, 1, 4);
+// console.log(arr1);
+
+//! Sort in decreasing order!!!!!!!!!!!!!!!!!
+//todo sort the array in decreasing order
+
+// let arrToSort = [5, 2, 1, -10, 8];
+
+// const toSortArray = (arr) => {
+//     arr.sort().reverse();
+//     console.log(arr)
+// }
+// toSortArray(arrToSort);
+
+//! Shorter way to sort and revers
+
+// let arrToSort = [5, 2, 1, -10, 8];
+
+// const toSortInDecreasing = (arr) => {
+//     arr.sort((a, b) => b - a);
+//     console.log(arr);
+// }
+// toSortInDecreasing(arrToSort);
