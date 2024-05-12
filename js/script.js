@@ -2260,7 +2260,10 @@
 
 //     this.methods = {
 //       "-": (a, b) => a - b,
-//       "+": (a, b) => a + b
+//       "+": (a, b) => a + b,
+//       "*": (a, b) => a * b,
+//       "/": (a, b) => a / b,
+//       "**": (a, b) => a ** b
 //     };
   
 //     this.calculate = function(str) {
@@ -2271,7 +2274,7 @@
 //         b = +split[2];
   
 //       if (!this.methods[op] || isNaN(a) || isNaN(b)) {
-//         return NaN;
+//         return "Wrong input data!!!";
 //       }
   
 //       return this.methods[op](a, b);
@@ -2282,4 +2285,4 @@
 //     };
 //   }
 //   let calc = new Calculator;
-//   console.log(calc.calculate("3 + 2"));
+//   console.log(calc.calculate("3 ** 2"));
