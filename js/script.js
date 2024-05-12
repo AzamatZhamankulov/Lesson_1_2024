@@ -2189,3 +2189,18 @@
 //     console.log(arr);
 // }
 // toSortInDecreasing(arrToSort);
+
+
+//! Copy and sort array
+//todo We have an array of strings arr. We’d like to have a sorted copy of it, but keep
+//todo arr unmodified. Create a function copySorted(arr) that returns such a copy
+
+// let arrStr = ["HTML", "JavaScript", "CSS"];
+// let arrSorted =[];
+
+// const sortArray = () => {
+//     arrSorted = [...arrStr].sort();
+// }
+// sortArray(arrStr);
+// console.log(arrSorted);
+// console.log(arrStr);
