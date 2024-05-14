@@ -2318,4 +2318,29 @@
 
 // let users = [ john, pete, mary ];
 
-// let usersMapped = users.map((item)=>)
+// let usersMapped = users.map(item => ({
+//     fullname: `${item.name} ${item.surname}`,
+//     id: item.id
+// }));
+
+// console.log(usersMapped);
+
+
+//! Sort users by age
+//todo Write the function sortByAge(users) that gets an array of objects with the age
+//todo property and sorts them by age.
+
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let users = [ pete, john, mary ];
+
+const sortByAge = (arr) => {
+    arr.sort((a, b) => a.age - b.age);
+}
+sortByAge(users);
+console.log(users[0].name); //John
+console.log(users[1].name); // Mary
+console.log(users[2].name); // Pete
+
