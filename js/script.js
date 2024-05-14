@@ -2330,17 +2330,27 @@
 //todo Write the function sortByAge(users) that gets an array of objects with the age
 //todo property and sorts them by age.
 
-let john = { name: "John", age: 25 };
-let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 28 };
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
 
-let users = [ pete, john, mary ];
+// let users = [ pete, john, mary ];
 
-const sortByAge = (arr) => {
-    arr.sort((a, b) => a.age - b.age);
-}
-sortByAge(users);
-console.log(users[0].name); //John
-console.log(users[1].name); // Mary
-console.log(users[2].name); // Pete
+// const sortByAge = (arr) => {
+//     arr.sort((a, b) => a.age - b.age);
+// }
+// sortByAge(users);
+// console.log(users[0].name); //John
+// console.log(users[1].name); // Mary
+// console.log(users[2].name); // Pete
 
+
+//! Shuffle an array:
+//todo Write the function shuffle(array) that shuffles (randomly reorders) elements of
+//todo the array. Multiple runs of shuffle may lead to different orders of elements.
+
+// let arr = [1, 2, 3];
+
+// const shuffle = (array) => {
+
+// }
