@@ -2430,14 +2430,99 @@
 //todo Create a function groupById(arr) that creates an object from it, with id as the
 //todo key, and array items as values.
 
-let users = [
-    {id: 'john', name: "John Smith", age: 20},
-    {id: 'ann', name: "Ann Smith", age: 24},
-    {id: 'pete', name: "Pete Peterson", age: 31},
-  ];
+// let users = [
+//     {id: 'john', name: "John Smith", age: 20},
+//     {id: 'ann', name: "Ann Smith", age: 24},
+//     {id: 'pete', name: "Pete Peterson", age: 31},
+//   ];
   
-  let usersById = {};
+//   const groupById = (arr) => {
+//     return arr.reduce((acc, user) => {
+//       acc[user.id] = user;
+//       return acc;}, {}); 
+//   }
   
-  const groupById = (arr) => {
-    
-  };
+//   let usersById = groupById(users);
+//   console.log(usersById);
+
+//! Other way of solution without arr.reduce
+// let users = [
+//   {id: 'john', name: "John Smith", age: 20},
+//   {id: 'ann', name: "Ann Smith", age: 24},
+//   {id: 'pete', name: "Pete Peterson", age: 31},
+// ];
+// let usersById = {};
+
+// const groupById = (arr) => {
+//   for (let user of arr) {
+//     usersById[user.id] = user;
+//   }
+//   return usersById;
+// }
+// console.log(groupById(users));
+
+
+//! Practical excercise: 13 objects and array
+//todo У вас есть список учеников, которые хотят поиграть в игру:
+//todo const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris',
+//todo 'Bernard', 'Takesi', 'Sam'];
+//todo Но команд может быть только 3 по 3 человека. Напишите функцию
+//todo sortStudentsByGroups, которая принимает в себя массив строк.
+//todo Внутри она сначала сортирует имена по алфавиту. Затем распределяет учеников по
+//todo 3 человека в 3 группы по алфавитному порядку. Эти группы должны быть массивами.
+//todo Итог, функция возвращает новый массив с тремя командами и строкой как 4й элемент.
+
+//todo Пример:
+//todo sortStudentsByGroups(students)  =>
+  // [
+  //   [ 'Andrew', 'Ann', 'Bernard' ],
+  //   [ 'Cris', 'Josh', 'Mark' ],
+  //   [ 'Peter', 'Sam', 'Sandra' ],
+  //   'Оставшиеся студенты: Takesi'
+  // ]
+ 
+//todo  Если убрать одно студента из списка, то результат будет:
+  // [
+  //   [ 'Andrew', 'Ann', 'Bernard' ],
+  //   [ 'Cris', 'Josh', 'Mark' ],
+  //   [ 'Peter', 'Sam', 'Sandra' ],
+  //   'Оставшиеся студенты: -'
+  // ]
+
+//todo А если добавить одного, то: 
+  // [
+  //   [ 'Andrew', 'Ann', 'Bernard' ],
+  //   [ 'Cris', 'Josh', 'Mark' ],
+  //   [ 'Peter', 'Sam', 'Sandra' ],
+  //   'Оставшиеся студенты: Takesi, Somebody'
+  // ]
+
+//todo То есть, меняется содержимое строки. Все оставшиеся ученики попадают туда.
+
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+
+const sortStudentsByGroups = (arr) => {
+  const groups = [];
+  const groupSize = 3;
+  
+  arr.sort();
+  
+  // Разделяем студентов на группы по 3 человека
+  for (let i = 0; i < arr.length; i += groupSize) {
+      groups.push(arr.slice(i, i + groupSize));
+  }
+    // Проверяем остаток студентов
+  const remainder = arr.length % groupSize;
+  if (remainder === 1) {
+      // Если остался один студент
+      groups.push(`Оставшиеся студенты: ${arr[arr.length - 1]}`);
+  } else if (remainder === 2) {
+      // Если осталось два студента
+      groups.push(`Оставшиеся студенты: ${arr[arr.length - 2]}, ${arr[arr.length - 1]}`);
+  } else {
+      // Если нет остатка
+      groups.push('Оставшиеся студенты: -');
+  }
+  return groups;
+}
+console.log(sortStudentsByGroups(students));
