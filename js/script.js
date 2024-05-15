@@ -2349,8 +2349,78 @@
 //todo Write the function shuffle(array) that shuffles (randomly reorders) elements of
 //todo the array. Multiple runs of shuffle may lead to different orders of elements.
 
-// let arr = [1, 2, 3];
+// let arr = [1, 2, 3, 4, 5, 6 ];
 
 // const shuffle = (array) => {
-
+//     array.sort(() => Math.random() - 0.5)
 // }
+// shuffle(arr);
+// console.log(arr);
+// shuffle(arr);
+// console.log(arr);
+// shuffle(arr);
+// console.log(arr);
+// shuffle(arr);
+// console.log(arr);
+// shuffle(arr);
+// console.log(arr);
+
+
+//!TEST Math.random() - 0.5;
+// let test = Math.random() - 0.5;
+// console.log(test);
+
+//! test 
+// let arrTest = [1, 2, 3, 4];
+// let arrTestResult = arrTest.sort(() => Math.random() - 0.5);
+// console.log(arrTestResult);
+
+//! Get average age
+//todo Write the function getAverageAge(users) that gets an array of objects with
+//todo property age and returns the average age.
+//todo The formula for the average is (age1 + age2 + ... + ageN) / N.
+
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 29 };
+
+// let users = [ john, pete, mary ];
+// let averageAge;
+
+// const getAverageAge = (arr) => {
+//     averageAge = arr.reduce((acc, user) => acc + user.age, 0) / arr.length;
+//     console.log(averageAge);
+//     return averageAge;
+// }
+// getAverageAge(users); // 25 + 30 + 29) / 3 = 28
+
+
+//! Filter unique array members
+//todo Let arr be an array.
+//todo Create function unique(arr) that should return an array with unique items of arr
+
+// let strings = ["Hare", "Krishna", "Hare", "Krishna", "Krishna", "Krishna", "Hare",
+//     "Hare", ":-O"
+// ];
+// let result = [];
+
+// const uniqueArr = (arr) => {
+//     for (let str of arr) {
+//         if (!result.includes(str)) {
+//             result.push(str);
+//         }
+//     }
+//     return result;
+// };
+// console.log(uniqueArr(strings)); //[ 'Hare', 'Krishna', ':-O' ]
+
+
+//! SHorter way!! With new Set)
+// let strings = ["Hare", "Krishna", "Hare", "Krishna", "Krishna", "Krishna", "Hare",
+//     "Hare", ":-O"
+// ];
+
+// const uniqueArr = (arr) => {
+//     return Array.from(new Set(arr));
+// }
+// console.log(uniqueArr(strings)); //[ 'Hare', 'Krishna', ':-O' ]
