@@ -2375,7 +2375,7 @@
 // let arrTestResult = arrTest.sort(() => Math.random() - 0.5);
 // console.log(arrTestResult);
 
-//! Get average age
+//! Get average age with arr.reduce((acc, item) => acc + item.value, 0) / arr.length
 //todo Write the function getAverageAge(users) that gets an array of objects with
 //todo property age and returns the average age.
 //todo The formula for the average is (age1 + age2 + ... + ageN) / N.
@@ -2424,3 +2424,20 @@
 //     return Array.from(new Set(arr));
 // }
 // console.log(uniqueArr(strings)); //[ 'Hare', 'Krishna', ':-O' ]
+
+//! Create keyed object from array
+//todo Let’s say we received an array of users in the form {id:..., name:..., age:... }.
+//todo Create a function groupById(arr) that creates an object from it, with id as the
+//todo key, and array items as values.
+
+let users = [
+    {id: 'john', name: "John Smith", age: 20},
+    {id: 'ann', name: "Ann Smith", age: 24},
+    {id: 'pete', name: "Pete Peterson", age: 31},
+  ];
+  
+  let usersById = {};
+  
+  const groupById = (arr) => {
+    
+  };
