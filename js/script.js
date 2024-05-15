@@ -2499,30 +2499,31 @@
 
 //todo То есть, меняется содержимое строки. Все оставшиеся ученики попадают туда.
 
-const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+// const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
 
-const sortStudentsByGroups = (arr) => {
-  const groups = [];
-  const groupSize = 3;
-  
-  arr.sort();
-  
-  // Разделяем студентов на группы по 3 человека
-  for (let i = 0; i < arr.length; i += groupSize) {
-      groups.push(arr.slice(i, i + groupSize));
-  }
-    // Проверяем остаток студентов
-  const remainder = arr.length % groupSize;
-  if (remainder === 1) {
-      // Если остался один студент
-      groups.push(`Оставшиеся студенты: ${arr[arr.length - 1]}`);
-  } else if (remainder === 2) {
-      // Если осталось два студента
-      groups.push(`Оставшиеся студенты: ${arr[arr.length - 2]}, ${arr[arr.length - 1]}`);
-  } else {
-      // Если нет остатка
-      groups.push('Оставшиеся студенты: -');
-  }
-  return groups;
-}
-console.log(sortStudentsByGroups(students));
+// function sortStudentsByGroups(arr) {
+//   arr.sort();
+//   const a = [], b = [], c = [], rest = [];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (i < 3) {
+//       a.push(arr[i]);
+//     } else if (i < 6) {
+//       b.push(arr[i]);
+//     } else if (i < 9) {
+//       c.push(arr[i]);
+//     } else {
+//       rest.push(arr[i]);
+//     }
+//   }
+//   return [a,b,c, `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(', ')}`]
+// }
+// console.log(sortStudentsByGroups(students));
+
+
+//! Lesson # 38 Check error from inspect console !!! Breakpoints !!!
+
+
+//! lesson # 39 Dinamic typezation in JS
+
+
