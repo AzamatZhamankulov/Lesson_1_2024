@@ -2524,6 +2524,97 @@
 //! Lesson # 38 Check error from inspect console !!! Breakpoints !!!
 
 
-//! lesson # 39 Dinamic typezation in JS
+//! lesson # 39 Dynamic Typing in JS
+
+//todo To String
+//! 1
+// console.log(typeof(String(null)));
+// console.log(typeof(String(4)));
+
+//! 2
+// console.log(typeof(5 + '')); // при сложении со строкой всегда будет строка
+
+// const num = 5;
+
+// console.log("https://youtube.com/catalog/" + num);
+
+// const fontSize = 26 + 'px';
+
+//todo To Number
+//! 1 
+// console.log(typeof(Number('4'))); //number
+
+//! 2
+// console.log(typeof(+'4')); //number
+
+//! 3
+// console.log(typeof(parseInt("15px", 10))) //number
+
+// let userNumber = +prompt("Hello, please insert your number", "");
+
+//todo To Boolean
+//! 0, '', null, undefined, NaN; => False
+//! 1
+// let switcher =  null; // false
+
+// if(!switcher) {
+//   console.log('Working...'); //Working
+// }
+
+// switcher = 1; //true
+// if(switcher) {
+//   console.log('Working...'); //Working
+// }
+
+//! 2
+// console.log(typeof(Boolean('4'))); // boolean
+
+//! 3
+// console.log(typeof(!!"1234")); // boolean
 
 
+//! lesson # 40 Closure and Lexical environment in JS 
+
+// let number = 5;
+
+// const logNumber = () => {
+//   console.log(number);
+// }
+
+// number = 6;
+
+// logNumber(number); //6
+
+//! let's add local functional variable with value 4
+// let number = 5; debugger
+
+// function logNumber() {
+//   let number = 4; debugger
+//   console.log(number); 
+// }
+// //! after each function call it will create own Lexical environment
+// number = 6;
+// logNumber(number); debugger //4
+
+// number = 8;
+// logNumber(number); debugger //4
+
+// number = 10;
+// logNumber(number); debugger //4
+
+function createCounter() {
+  let counter = 0;
+
+  const myFynction = function () {
+    counter = counter + 1;
+    return counter;
+  }
+  return myFynction;
+}
+
+const increment = createCounter();
+const c1 = increment();
+const c2 = increment();
+const c3 = increment();
+
+console.log(c1, c2, c3);
