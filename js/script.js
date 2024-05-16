@@ -2602,19 +2602,38 @@
 // number = 10;
 // logNumber(number); debugger //4
 
-function createCounter() {
-  let counter = 0;
+// function createCounter() {
+//   let counter = 0;
 
-  const myFynction = function () { debugger
-    counter = counter + 1;debugger
-    return counter;debugger
-  }
-  return myFynction;
-}
-debugger
-const increment = createCounter();
-const c1 = increment();debugger
-const c2 = increment();debugger
-const c3 = increment();debugger
+//   const myFynction = function () { debugger
+//     counter = counter + 1;debugger
+//     return counter;debugger
+//   }
+//   return myFynction;
+// }
+// debugger
+// const increment = createCounter();
+// const c1 = increment();debugger
+// const c2 = increment();debugger
+// const c3 = increment();debugger
 
-console.log(c1, c2, c3);
+// console.log(c1, c2, c3);
+
+
+//! Destruction of the array and object !!!!!!!!!!!!!!!!
+// const num = [1, 2, 3];
+// const num = {
+//   first: 1,
+//   second: 2
+// }
+// const fn = function(obj){
+//   // const [_, azamat, azat] = arr;
+//   // const azamat = arr[1];
+//   // const azat = arr[2];
+//   const { second, first: myCustomVar, three} = obj;
+  
+//   console.log(myCustomVar)
+// }
+
+// fn(num);
+
