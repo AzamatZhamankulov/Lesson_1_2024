@@ -2605,16 +2605,16 @@
 function createCounter() {
   let counter = 0;
 
-  const myFynction = function () {
-    counter = counter + 1;
-    return counter;
+  const myFynction = function () { debugger
+    counter = counter + 1;debugger
+    return counter;debugger
   }
   return myFynction;
 }
-
+debugger
 const increment = createCounter();
-const c1 = increment();
-const c2 = increment();
-const c3 = increment();
+const c1 = increment();debugger
+const c2 = increment();debugger
+const c3 = increment();debugger
 
 console.log(c1, c2, c3);
