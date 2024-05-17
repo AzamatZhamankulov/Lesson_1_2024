@@ -2639,8 +2639,37 @@
 
 //! Lesson 41 questions from job interviews
 
-// let a = [1, 2, 3];
-// let b = [1, 2, 3]
+// let a = 5;
+// console.log( a++ ); //! 5 fisrt time it will give 5 than a will be equal 6
 
-// console.log(0 || "" || 2 || undefined || true || false)
+// console.log([ ] + false - null + true) // NaN
 
+// let y = 1;
+// let x = y = 2;
+// console.log(x); // 2
+
+// console.log([ ] + 1 + 2) // 12
+
+// console.log("1"[0] ) // 1
+
+// console.log(2 && 1 && null && 0 && undefined) // null
+
+// const i = !!(1 && 2);
+// const j = (1 && 2);
+// console.log(i == j); // false
+
+// console.log(null || 2 && 3 || 4) // 3
+
+// let num1 = [1, 2, 3];
+// let num2 = [1, 2, 3];
+// console.log(num1 === num2); // false
+
+// console.log(+"Infinity"); // Infinity
+
+// console.log("Ёжик" > "яблоко") // false
+
+// console.log("ёжик" > "яблоко") //true
+
+// console.log("ёжик" > "Яблоко") // true
+
+// console.log(0 || "" || 2 || undefined || true || false) // 2
