@@ -2673,3 +2673,79 @@
 // console.log("ёжик" > "Яблоко") // true
 
 // console.log(0 || "" || 2 || undefined || true || false) // 2
+
+
+//! Practice # 16: Debagging 
+//todo Задание:У вас есть объект с данными о ресторане. Начинающий разработчик создал
+//todo несколько функций, которые работают неправильно и он не может понять почему.
+//todo Нужно исправить функции так, чтобы они давали всегда правильный результат.
+
+//todo 1) Функция isOpen не хочет правильно работать. Что мы уже не пробовали подставлять
+//todo в неё - результат все время неправильный. Необходимо найти причины и исправить.
+
+//todo 2) Функция isAverageLunchPriceTrue должна брать цены двух любых блюд из меню,
+//todo складывать их и сравнивать с средним чеком (averageLunchPrice).
+//todo Сейчас функция работает, но постоянно выдает неправильный результат. Ведь из
+//todo представленного меню сумма двух любых цен всегда будет больше 20. Необходимо
+//todo найти причину и исправить.
+
+//todo 3) Функция transferWaitors создана для того, чтобы копировать шаблон данных и
+//todo передавать их в другой ресторан. Конечно, в другом ресторане будут другие блюда,
+//todo другие официанты и тп. Сейчас эта функция только в начале разработки и должна
+//todo менять данные про официантов. Но в нынешнем виде мы обнаружили, что после её
+//todo запуска не только копия данных содержит новых официантов, но и основные данные!
+//todo В restorantData сотрудник Alice исчезает и заменяется Mike!
+//todo Необходимо найти причину и немедленно исправить, чтобы данные были разделены.
+
+const restorantData = {
+  menu: [
+      {
+          name: 'Salad Caesar',
+          price: '14$'
+      },
+      {
+          name: 'Pizza Diavola',
+          price: '9$'
+      },
+      {
+          name: 'Beefsteak',
+          price: '17$'
+      },
+      {
+          name: 'Napoleon',
+          price: '7$'
+      }
+  ],
+  waitors: [
+      {name: 'Alice', age: 22}, {name: 'John', age: 24}
+  ],
+  averageLunchPrice: '20$',
+  openNow: true
+};
+
+function isOpen(prop) {
+  let answer = '';
+  prop ? answer = 'Открыто' : answer = 'Закрыто';
+
+  return answer;
+}
+
+console.log(isOpen(restorantData.openNow))
+
+function isAverageLunchPriceTrue(fDish, sDish, average) {
+  if (+fDish.price.slice(0, -1) + +sDish.price.slice(0, -1) < +average.slice(0, -1)) {
+      return 'Цена ниже средней';
+  } else {
+      return 'Цена выше средней';
+  }
+}
+
+console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
+
+function transferWaitors(data) {
+  const copy = JSON.parse(JSON.stringify(data));
+  copy.waitors[0] = {name: 'Mike', age: 32};
+  return copy;
+}
+console.log(transferWaitors(restorantData));
+console.log(restorantData);
