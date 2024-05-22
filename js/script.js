@@ -2765,4 +2765,15 @@ const circles = document.getElementsByClassName('circle');
 console.log(circles);
 console.log(circles[1]);
 
-const hearts = document.querySelectorAll();
+const hearts = document.querySelectorAll('.heart');
+console.log(hearts);
+
+hearts.forEach(item => {
+  console.log(item);
+});
+
+const oneHeart = document.querySelector('.heart'); // gets first element with this class name
+console.log(oneHeart);
+
+const firstElementDiv = document.querySelector('div');
+console.log(firstElementDiv);
