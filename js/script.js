@@ -2753,27 +2753,89 @@
 
 //! Lesson # 42 Getting elements from the page
 
-const box = document.getElementById('box');
-console.log(box);
+// const box = document.getElementById('box');
+// console.log(box);
 
-const btns = document.getElementsByTagName('button');
-// const btns = document.getElementsByTagName('button')[1]; // we can get one element
-console.log(btns);
-console.log(btns[2]);
+// const btns = document.getElementsByTagName('button');
+// // const btns = document.getElementsByTagName('button')[1]; // we can get one element
+// console.log(btns);
+// console.log(btns[2]);
 
-const circles = document.getElementsByClassName('circle');
-console.log(circles);
-console.log(circles[1]);
+// const circles = document.getElementsByClassName('circle');
+// console.log(circles);
+// console.log(circles[1]);
 
-const hearts = document.querySelectorAll('.heart');
-console.log(hearts);
+// const hearts = document.querySelectorAll('.heart'); // gets all elements with this class name
+// console.log(hearts);
 
-hearts.forEach(item => {
-  console.log(item);
-});
+// hearts.forEach(item => {
+//   console.log(item);
+// });
 
-const oneHeart = document.querySelector('.heart'); // gets first element with this class name
-console.log(oneHeart);
+// const oneHeart = document.querySelector('.heart'); // gets first element with this class name
+// console.log(oneHeart);
 
-const firstElementDiv = document.querySelector('div');
-console.log(firstElementDiv);
+// const firstElementDiv = document.querySelector('div');
+// console.log(firstElementDiv);
+
+
+//! Lesson # 43: Interaction CSS with elements on the document (page)
+
+// const box = document.getElementById('box'),
+//       btns = document.getElementsByTagName('button'),
+//       circles = document.getElementsByClassName('circle'),
+//       wrapper = document.querySelector('.wrapper'),
+//       // hearts = document.querySelectorAll('.heart'),
+//       hearts = wrapper.querySelectorAll('.heart'),
+//       oneHeart = wrapper.querySelector('.heart');
+//       // oneHeart = document.querySelector('.heart');
+      
+
+// // box.style.backgroundColor = 'blue';
+// // box.style.width = '250px';
+
+// box.style.cssText = 'border: 10px; background-color: purple'; // we can write like this
+
+// btns[1].style.borderRadius = '100%';
+
+// circles[0].style.backgroundColor = 'red';
+// circles[1].style.backgroundColor = 'yellow';
+// circles[2].style.backgroundColor = 'green';
+
+// // for (let i = 0; i < hearts.length; i++) {
+// //   hearts[i].style.backgroundColor = 'purple';
+// // }
+
+// hearts.forEach(item => {
+//   item.style.backgroundColor = 'pink';
+// });
+
+// const div = document.createElement('div');
+// // const text = document.createTextNode('Here was me!');
+// div.classList.add('black');
+// document.body.append(div);
+
+// // wrapper.append(div) // adds div in the end of wrapper
+// // wrapper.appendChild(div); // same as append but it is old method
+// // wrapper.prepend(div); // adds div in the begining of wrapper
+
+// // hearts[0].before(div); // add before hearts[0] div
+// // hearts[0].after(div); // add after hearts[0] div
+
+// // wrapper.insertBefore(div, hearts[1]); // same as .before //! old
+
+// // hearts[0].replaceWith(circles[0]); // replacing one element with other
+// // wrapper.replaceChild(circles[0], hearts[0]); // same as .replaceWith //! old
+
+
+// // circles[0].remove(); // removing the element
+// // document.body.removeChild(circles[1]); // through parent element to remove //! old
+
+
+// div.innerHTML = "<h1>Hello World</h1>"; // we can insert HTML tags
+// // div.textContent = "<h1>Hello World</h1>"; // we use it only text with this method
+
+// // div.insertAdjacentHTML('beforebegin', '<h2>Bye</h2>'); // beforbegin
+// // div.insertAdjacentHTML('afterbegin', '<h2>Bye</h2>'); // afterbegin
+// // div.insertAdjacentHTML('beforeend', '<h2>Bye</h2>'); // beforeend
+// div.insertAdjacentHTML('afterend', '<h2>Bye</h2>'); // afterend
