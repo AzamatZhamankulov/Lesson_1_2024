@@ -3096,61 +3096,89 @@
 // console.log(getTotalProgressByItteration(students)); // 41.6
 
 
-//! what if we will have edited data with extra courses
+//! what if we will have edited data with extra courses so we have to use Recoursion
 
-let students = {
-  js: [{
-    name: 'John',
-    progress: 100
-  }, {
-    name: 'Ivan',
-    progress: 60
-  }],
+// let students = {
+//   js: [{
+//     name: 'John',
+//     progress: 100
+//   }, {
+//     name: 'Ivan',
+//     progress: 60
+//   }],
 
-  html: {
-    basic: [{
-      name: 'Peter',
-      progress: 20
-    }, {
-      name: 'Ann',
-      progress: 18
-    }],
+//   html: {
+//     basic: [{
+//       name: 'Peter',
+//       progress: 20
+//     }, {
+//       name: 'Ann',
+//       progress: 18
+//     }],
 
-    pro: [{
-      name: 'Sam',
-      progress: 10
-    }],
+//     pro: [{
+//       name: 'Sam',
+//       progress: 10
+//     }],
 
-    someEditionalData: {
-      students: [{
-        name: 'Test',
-        progress: 100
-      }]
-    }
-  }
-};
+//     someEditionalData: {
+//       students: [{
+//         name: 'Test',
+//         progress: 100
+//       }]
+//     }
+//   }
+// };
 
-function getTotalProgressByRecoursion(data) {
-  if (Array.isArray(data)) {
-    let total = 0;
+// function getTotalProgressByRecoursion(data) {
+//   if (Array.isArray(data)) {
+//     let total = 0;
 
-    for (let i = 0; i < data.length; i++) {
-      total += data[i].progress;
-    }
-    return [total, data.length];
-  } else {
-    let total = [0 , 0];
+//     for (let i = 0; i < data.length; i++) {
+//       total += data[i].progress;
+//     }
+//     return [total, data.length];
+//   } else {
+//     let total = [0 , 0];
 
-    for (let subData of Object.values(data)) {
-      const subDataArray = getTotalProgressByRecoursion(subData);
-      total[0] += subDataArray[0];
-      total[1] += subDataArray[1];
-    }
+//     for (let subData of Object.values(data)) {
+//       const subDataArray = getTotalProgressByRecoursion(subData);
+//       total[0] += subDataArray[0];
+//       total[1] += subDataArray[1];
+//     }
 
-    return total;
-  }
+//     return total;
+//   }
+// }
+
+// const result = getTotalProgressByRecoursion(students);
+
+// console.log(result[0]/result[1]); // 51.333
+
+
+//! Practice with RECOURSION
+
+//todo Напишите функцию, которая вычисляет факториал.
+//todo Задание простое, но нужно понимать что такое факториал вообще.
+//todo Факториал  – это число, умноженное на "себя минус один",
+//todo затем на "себя минус два", и так далее до 1. Факториал n обозначается как n!
+//todo Отсюда мы можем понять, что функция должна принимать 1 аргумент, который будет
+//todo являться числом. Будет неплохо, если вы на собеседовании сразу напишите проверку
+//todo на приходящее значение :) Поэтому, если в нашу функцию приходит дробное число или
+//todo не число  - возвращается строка с любым сообщением на ваше усмотрение.
+//todo Если 0 и меньше - возвращается число 1.
+//todo Сам же факториал с примерами выглядит вот так:
+//todo n! = n * (n - 1) * (n - 2) * ...*1 - это общая формула
+//todo Примеры значений для разных n:
+//todo 1! = 1
+//todo 2! = 2 * 1 = 2
+//todo 3! = 3 * 2 * 1 = 6
+//todo 4! = 4 * 3 * 2 * 1 = 24
+//todo 5! = 5 * 4 * 3 * 2 * 1 = 120
+//todo То есть, вызов нашей функции factorial(5) возвращает число 120
+//todo factorial(4) => 24
+//todo Решить задачу нужно через рекурсию.
+
+function factorial() {
+  
 }
-
-const result = getTotalProgressByRecoursion(students);
-
-console.log(result[0]/result[1]); // 51.333
