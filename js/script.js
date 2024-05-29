@@ -3179,6 +3179,30 @@
 //todo factorial(4) => 24
 //todo Решить задачу нужно через рекурсию.
 
-function factorial() {
-  
+function factorial(n) {
+  let result;
+  for (let i = 1; i <= n; i++) {
+    if (n <= 0) {
+      result = 1;
+      return result;
+    } else if (typeof n !== 'number' || !Number.isInteger(n)) {
+      result = 'Please insert only integer numbers!';
+      return result;
+    } else {
+      n = i;
+      result = n * n[i];
+    } 
+  }
 }
+console.log(factorial(-3));
+
+
+
+//! Factorial without RECOURSION
+// let a = 4;
+// const factorialNumbers = Array.from({length : a}, (_,k) => k + 1).reverse();
+
+// function getFactorial(acc, b) {
+//   return acc * b;
+// }
+// console.log(factorialNumbers.reduce(getFactorial));
