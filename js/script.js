@@ -3179,6 +3179,8 @@
 //todo factorial(4) => 24
 //todo Решить задачу нужно через рекурсию.
 
+//! Function factorial with RECOURSION
+
 function factorial(n) {
   if (typeof(n) !== 'number' || !Number.isInteger(n)) {
       return "Ошибка, проверьте данные";
