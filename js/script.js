@@ -3180,21 +3180,22 @@
 //todo Решить задачу нужно через рекурсию.
 
 function factorial(n) {
-  let result;
-  for (let i = 1; i <= n; i++) {
-    if (n <= 0) {
-      result = 1;
-      return result;
-    } else if (typeof n !== 'number' || !Number.isInteger(n)) {
-      result = 'Please insert only integer numbers!';
-      return result;
-    } else {
-      n = i;
-      result = n * n[i];
-    } 
+  if (typeof(n) !== 'number' || !Number.isInteger(n)) {
+      return "Ошибка, проверьте данные";
   }
+
+  if (n >= 1) {
+      return n * factorial(n - 1);
+  } else {
+      return 1;
+  }
+
+  // Более короткий вариант, который вы можете встретить
+  // Но не учитывает отрицательные значения
+  // return n ? n * factorial(n - 1) : 1;
 }
-console.log(factorial(-3));
+
+console.log(factorial(4));
 
 
 
