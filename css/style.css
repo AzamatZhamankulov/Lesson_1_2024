@@ -2,6 +2,9 @@
   width: 150px;
   height: 150px;
   background-color: red;
+  text-align: center;
+  color: #fff;
+  place-items: center;
 }
 button {
 	width: 80px;

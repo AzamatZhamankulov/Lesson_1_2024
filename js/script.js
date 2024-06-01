@@ -3267,26 +3267,26 @@
 //       event.target.reset();
 //   });
   
-//   //! function for delete ads
+//   //todo function for delete ads
 //   const deleteAds = (arr) => {
 //       arr.forEach(item => {
 //           item.remove();
 //       });
 //   };
   
-//   //! function for makeing some changes
+//   //todo function for makeing some changes
 //   const makeChanges = () => {
 //       promoGenre.textContent = 'драма';
 
 //       posterBG.style.backgroundImage = 'url("img/bg.jpg")';
 //   };
 
-//   //! function to sort the array
+//   //todo function to sort the array
 //   const sortArr = (arr) => {
 //       arr.sort();
 //   };
 
-//   //! fucntion to create new list of films with button delete and numbers
+//   //todo fucntion to create new list of films with button delete and numbers
 //   function creatMovieList(films, parent) {
 //       parent.innerHTML = "";
 //       sortArr(movieDB.movies);       
@@ -3299,12 +3299,12 @@
 //           `;
 //       });
 
-//       //! delete the film form list
+//       //todo delete the film form list
 //       document.querySelectorAll('.delete').forEach((btn, i) => {
 //           btn.addEventListener('click', () => {
 //               btn.parentElement.remove();
 //               movieDB.movies.splice(i, 1);
-//               //!recoursion to change numbers as well
+//               //todo recoursion to change numbers as well
 //               creatMovieList(films, parent);
 //           });
 //       });
@@ -3315,3 +3315,43 @@
 
 //   creatMovieList(movieDB.movies, movieList);
 // });
+
+
+//! lesson # 49 Mobile events and eventlistners
+
+//todo touchstart; touchmove; touchend; touchenter; touchleave; touchcancel;
+
+// window.addEventListener('DOMContentLoaded', () => {
+//   const box = document.querySelector('.box');
+
+//   //e touchstart
+//   box.addEventListener('touchstart', (e) => {
+//     e.preventDefault();
+
+//     console.log('You have STARTED it!');
+
+//     //e touches => how many touches or how many fingers on the screen
+//     console.log(e.touches);
+
+//     //e targetTouches => how many fingers on one target
+//     console.log(e.targetTouches);
+//     console.log(e.targetTouches[0].pageX);
+
+//     //e changedTouches => list of fingers which were removed or ended acting
+//     console.log(e.changedTouches);
+//   });
+  
+//   // //e touchmove
+//   // box.addEventListener('touchmove', (e) => {
+//   //   e.preventDefault();
+
+//   //   console.log('You are MOVING it!')
+//   // });
+
+//   // //e touchend
+//   // box.addEventListener('touchend', (e) => {
+//   //   e.preventDefault();
+
+//   //   console.log('You ENDED it!')
+//   // });
+// })
