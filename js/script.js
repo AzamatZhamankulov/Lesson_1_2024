@@ -3355,3 +3355,28 @@
 //   //   console.log('You ENDED it!')
 //   // });
 // })
+
+
+//! Lesson #50: Async, defer, dynamic scripts
+
+// //todo defer => script will load on background 
+// //todo async => ассинхронно will not wait for another script will work the fastest one
+
+// const paragraphs = document.querySelectorAll('p');
+// console.log(paragraphs);
+
+// //todo dynamic scripts => are work by default as Async
+// // const script = document.createElement('script');
+// // script.src = "js/test.js";
+// // document.body.append(script);
+
+// //todo we can change async default 
+// function loadScript(src) {
+//   const script = document.createElement('script');
+//   script.src = src;
+//   script.async = false;
+//   document.body.append(script);
+// }
+
+// loadScript("js/test.js");
+// loadScript("js/someTest.js");
