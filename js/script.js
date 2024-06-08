@@ -3490,3 +3490,28 @@
 // console.log(obj);
 
 // for (let value in obj) console.log(value);
+
+
+//! Descriptor of key and useful methods of objects
+//todo  writable => if this parameter is true so key in object could be changed
+// if it is false so key in object only for reading.
+
+//todo  enumerable => if this parameter is true so key in object could be numerated
+// in loop, if it is false so key in object will be ignored by loop
+
+//todo configurable => if this parameter is true so key in object could be deleted and
+// atributes could be changed if it is false we can not do it
+
+const user = {
+  name: 'Alex',
+  surname: 'Smith',
+  birthday: '20/04/1993',
+  showMypublicData: function() {
+    console.log(`${this.name} ${this.surname}`);
+  }
+}
+
+// console.log(Object.getOwnPropertyDescriptor)
+
+
+
