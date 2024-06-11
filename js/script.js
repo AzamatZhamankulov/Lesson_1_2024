@@ -3502,16 +3502,24 @@
 //todo configurable => if this parameter is true so key in object could be deleted and
 // atributes could be changed if it is false we can not do it
 
-const user = {
-  name: 'Alex',
-  surname: 'Smith',
-  birthday: '20/04/1993',
-  showMypublicData: function() {
-    console.log(`${this.name} ${this.surname}`);
-  }
-}
+// const user = {
+//   name: 'Alex',
+//   surname: 'Smith',
+//   birthday: '20/04/1993',
+//   showMypublicData: function() {
+//     console.log(`${this.name} ${this.surname}`);
+//   }
+// }
+// Object.defineProperty(user, 'birthday', {writable: false});
+// console.log(Object.getOwnPropertyDescriptor(user, 'birthday'));
 
-// console.log(Object.getOwnPropertyDescriptor)
+// // user.name = 'dfasd'; // here will be error
+
+// Object.defineProperty(user, 'gender', {value: 'male'});
+// console.log(Object.getOwnPropertyDescriptor(user, 'gender')); // by default all false
+
+
+
 
 
 
