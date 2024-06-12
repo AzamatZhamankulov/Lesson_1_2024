@@ -3521,18 +3521,18 @@
 
 //! Lesson #57 Itteratable construction
 
-const user = {
-  name: 'Alex',
-  surname: 'Smith',
-  birthday: '20/04/1993',
-  showMypublicData: function() {
-    console.log(`${this.name} ${this.surname}`);
-  }
-}
+// const user = {
+//   name: 'Alex',
+//   surname: 'Smith',
+//   birthday: '20/04/1993',
+//   showMypublicData: function() {
+//     console.log(`${this.name} ${this.surname}`);
+//   }
+// }
 
-const arr = ['b', 'a', 'c'];
+// const arr = ['b', 'a', 'c'];
 
-const str = 'string';
+// const str = 'string';
 
 //todo for ittarration Object we can use FOR IN
 
@@ -3605,3 +3605,72 @@ const str = 'string';
 //   console.log(res);
 // }
 
+
+//! Lesson # 58: Map 
+
+// const user = {
+//   name: 'Alex',
+//   surname: 'Smith',
+//   birthday: '20/04/1993',
+//   showMypublicData: function() {
+//     console.log(`${this.name} ${this.surname}`);
+//   }
+// }
+
+// const arr = ['b', 'a', 'c'];
+
+// const str = 'string';
+
+// console.log(typeof(Object.keys(user)[0])); // string
+
+// const shops = [
+//   {rice: 500},
+//   {oil: 200},
+//   {bread: 50}
+// ];
+
+// const budget = [1000, 500, 100];
+
+// const map = new Map([
+//   [{paper: 20}, 50]
+// ]);
+
+// // map.set(shops[0], 1000) // one by one set the values
+// //    .set(shops[1], 500)
+// //    .set(shops[2], 100);
+
+// //todo we can do it with forEach
+// shops.forEach((shop, i) => {
+//   map.set(shop, budget[i]);
+// })
+
+// console.log(map);
+// // console.log(map.get(shops[0])); // get value of [0]
+// // console.log(map.has(shops[0])); // true
+// // console.log(map.delete(shops[0])); // deleting object
+// // console.log(map.has(shops[0])); // false => because in previouse line we deleted
+// // console.log(map);
+// // console.log(map.keys());
+
+// // for (let shop of map.keys()) {
+// //   console.log(shop);
+// // }
+
+// // const goods = [];
+
+// // for (let shop of map.keys()) {
+// //   goods.push(Object.keys(shop)[0])
+// // }
+// // console.log(goods); // we get array of goods
+
+// for (let budgetForGoods of map.values()) {
+//   console.log(budgetForGoods); // we get budgets
+// }
+
+// for (let budgetForGoods of map.entries()) {
+//   console.log(budgetForGoods); // array with goods and budgets
+// }
+
+// map.forEach((value, key, map) => {
+//   console.log(key, value);
+// })
