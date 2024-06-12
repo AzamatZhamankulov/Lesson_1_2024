@@ -3492,7 +3492,7 @@
 // for (let value in obj) console.log(value);
 
 
-//! Descriptor of key and useful methods of objects
+//! Lesson #56 Descriptor of key and useful methods of objects
 //todo  writable => if this parameter is true so key in object could be changed
 // if it is false so key in object only for reading.
 
@@ -3519,7 +3519,89 @@
 // console.log(Object.getOwnPropertyDescriptor(user, 'gender')); // by default all false
 
 
+//! Lesson #57 Itteratable construction
+
+const user = {
+  name: 'Alex',
+  surname: 'Smith',
+  birthday: '20/04/1993',
+  showMypublicData: function() {
+    console.log(`${this.name} ${this.surname}`);
+  }
+}
+
+const arr = ['b', 'a', 'c'];
+
+const str = 'string';
+
+//todo for ittarration Object we can use FOR IN
+
+// for (const key in user) {
+//   console.log(user[key]); // Alex Smith 20/04/1993 function()
+// }
+
+// //todo for ittarration Array we can also use FOR IN
+
+// for (const key in arr) {
+//   console.log(arr[key]); // b a c
+// }
+
+// //todo for ittarration String we can also use FOR IN
+
+// for (const key in str) {
+//   console.log(str[key]); // 's' 't' 'r' 'i' 'n' 'g'
+// }
+
+// //todo for ittarration Array we can also use FOR OF
+
+// for (const key of arr) {
+//   console.log(key); // b a c
+// }
+
+// //todo for ittarration Object will not work use FOR OF
+
+// // for (const key of user) {
+// //   console.log(key); // TypeError: user is not iterable
+// // }
+
+// // //todo for ittarration String we can also use FOR OF
+
+// for (const key of str) {
+//   console.log(key); // 's' 't' 'r' 'i' 'n' 'g'
+// }
 
 
+//todo Object[Symbol.iterator] = function()
 
+// const salaries = {
+//   john: 500,
+//   ivan: 1000,
+//   ann: 5000,
+//   sayHello: function() {
+//     console.log('Hellow azamaza');
+//   }
+// }
+
+// salaries[Symbol.iterator] = function() {
+//   return {
+//     current: this.john,
+//     last: this.ann,
+
+//     next() {
+//       if (this.current < this.last) {
+//         this.current = this.current + 500;
+//         return {done: false, value: this.current}
+//       } else {
+//         return {done: true}
+//       }      
+//     }
+//   }
+// }
+
+// // const iterator = salaries[Symbol.iterator]();
+// // console.log(iterator.next());
+
+// for (let res of salaries) {
+//   console.log(res);
+// }
 
