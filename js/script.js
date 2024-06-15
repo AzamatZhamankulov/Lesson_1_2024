@@ -3674,3 +3674,23 @@
 // map.forEach((value, key, map) => {
 //   console.log(key, value);
 // })
+
+//todo WHAT IS THE DIFFERENCE BETWEEN Object and Map =>
+
+//todo 1) Map keys could be any type (array, object, function, numbers, string etc)
+//todo but Object keys could be ONLY a String.
+
+//todo 2) Map keys order always exaclty same how we set up them and added them
+//todo but Objects keys don't have exact order. Depending on when is this key was added
+
+//todo 3) When we create New Map - it will be empty and nothing will be inside the map.
+//todo as well as inheritable properities from prototype they will not be there.
+//todo However in empty Object prototype properities will be inside and if we will
+//todo change them might be some problems.
+
+//todo 4) Maps are easy to iterate, however With Objects it is complicated
+
+//todo 5) Map.size is very easy to get with help of method map.size.
+//todo with Objects it is complicated - to get size of the object we have to first
+//todo transformate the Object to Array than we can get length from array.
+//todo In Objects we can use object.keys => we can get array.length.
