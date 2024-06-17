@@ -3613,7 +3613,7 @@
 //   surname: 'Smith',
 //   birthday: '20/04/1993',
 //   showMypublicData: function() {
-//     console.log(`${this.name} ${this.surname}`);
+//     console.log(`${user.name} ${user.surname}`);
 //   }
 // }
 
@@ -3635,14 +3635,18 @@
 //   [{paper: 20}, 50]
 // ]);
 
-// // map.set(shops[0], 1000) // one by one set the values
-// //    .set(shops[1], 500)
-// //    .set(shops[2], 100);
+// map.set(shops[0], 1000) // one by one set the values
+//    .set(shops[1], 500)
+//    .set(shops[2], 100);
+
 
 // //todo we can do it with forEach
 // shops.forEach((shop, i) => {
 //   map.set(shop, budget[i]);
 // })
+
+// console.log(Array.prototype)
+// console.log(Array.prototype)
 
 // console.log(map);
 // // console.log(map.get(shops[0])); // get value of [0]
@@ -3672,7 +3676,7 @@
 // }
 
 // map.forEach((value, key, map) => {
-//   console.log(key, value);
+//   console.log(key, value)
 // })
 
 //todo WHAT IS THE DIFFERENCE BETWEEN Object and Map =>
@@ -3694,3 +3698,136 @@
 //todo with Objects it is complicated - to get size of the object we have to first
 //todo transformate the Object to Array than we can get length from array.
 //todo In Objects we can use object.keys => we can get array.length.
+
+
+//! CALLBACK fucntion CALLBACK fucntion CALLBACK fucntion CALLBACK fucntion
+//! CALLBACK fucntion CALLBACK fucntion CALLBACK fucntion CALLBACK fucntion
+//! CALLBACK fucntion CALLBACK fucntion CALLBACK fucntion CALLBACK fucntion
+//todo Callback функция в JavaScript — это функция, которая передается в другую функцию
+//todo в качестве аргумента и вызывается (обратно вызывается) после выполнения
+//todo определенного действия. Callback функции часто используются для асинхронных
+//todo операций, таких как обработка событий, выполнение HTTP-запросов, работа с
+//todo таймерами и т.д.
+
+//todo Простой пример использования callback функции:
+
+// const sayMyName = (adas) => {
+//   adas('Azamat',4);
+// }
+
+// sayMyName((name,a) => {
+//   console.log(name, a);
+// });
+
+// // Функция, принимающая callback в качестве аргумента
+// function doSomething(callback) {
+//   console.log('Doing something...');
+//   // Выполняем callback функцию
+//   callback();
+// }
+
+// // Определяем callback функцию
+// function myCallback() {
+//   console.log('Callback executed!');
+// }
+
+// // Передаем callback функцию в другую функцию
+// doSomething(myCallback);
+
+// // Output:
+// // Doing something...
+// // Callback executed!
+
+// //todo Другой пример с использованием асинхронной операции:
+
+// // Асинхронная операция с использованием callback
+// function loadData(callback) {
+//   setTimeout(() => {
+//       console.log('Data loaded');
+//       callback('Data from server');
+//   }, 2000);
+// }
+
+// // Callback функция для обработки данных
+// function processData(data) {
+//   console.log('Processing:', data);
+// }
+
+// // Вызов функции с асинхронной операцией
+// loadData(processData);
+
+// // Output (через 2 секунды):
+// // Data loaded
+// // Processing: Data from server
+
+
+
+//! lesson #59 Set => special kind of collections type of an array where each value can
+//! be repeated only one time
+
+//! set.values();
+//! set.keys();
+//! set.entries();
+//! set.delete(value);
+//! set.has(value);
+//! set.clear();
+//! set.size;
+
+// const arr = [1, 1, 2, 2, 6, 4, 4, 5, 5, 6];
+// const setOfArr = new Set(arr);
+// console.log(setOfArr); // Set(5) {1, 2, 6, 4, 5}
+
+// const students = ['Alex', 'Ann', 'Oleg', 'Ann'];
+// const setOfStudents = new Set(students);
+// console.log(setOfStudents); // Set(3) {'Alex', 'Ann', 'Oleg'}
+
+// setOfStudents.add('Ivan');
+// setOfStudents.add('Oleg');
+// console.log(setOfStudents); // Set(3) {'Alex', 'Ann', 'Oleg', 'Ivan'}
+
+//todo following iterration method FOR and forEach
+// for (let value of setOfStudents) console.log(value); // each value separately
+
+// setOfStudents.forEach((value, valueAgain, set) => {
+//   console.log(value, valueAgain, set);
+// }) // Alex Alex Ann Ann Oleg Oleg Ivan Ivan
+  
+// //todo We can fillter any array with set function
+// function unique(arr) {
+//   return new Set(arr);
+// }
+
+// //todo we can make it normal array from set
+// function unique(arr) {
+//   return Array.from(new Set(arr));
+// }
+
+
+//! Lesson #60: BigInt => doesn't have Math.methods and operations
+//todo  console.log(bigint + number); // TypeError: Cannot mix BigInt and other types
+
+// const bigint = 123n;
+// const sameBigint = BigInt(123n);
+// console.log(typeof(bigint)); // bigint
+// console.log(typeof(sameBigint)); // bigint
+// console.log(bigint - sameBigint); // 0n
+// console.log(4n + 2n); // 6n
+// console.log(4n / 2n); // 2n
+// console.log(4n > 2n); // true
+// console.log(4n > 2); // true
+// console.log(4n == 2n); // false
+// console.log(4n == 2); // false
+// console.log(2n == 2); // true
+// console.log(2n === 2); // false
+
+// let realBigint = 1n;
+// let number = 2;
+// // console.log(realBigint + number); // TypeError: Cannot mix BigInt and other types
+// // console.log(+realBigint + number); // TypeError: Cannot mix BigInt and other types
+// console.log(realBigint + BigInt(number)); // 3n
+// console.log(Number(realBigint) + number); // 3
+
+
+
+
+
