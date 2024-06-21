@@ -3828,6 +3828,36 @@
 // console.log(Number(realBigint) + number); // 3
 
 
+//! practice # 17
+//todo В каждой книге есть n страниц с номерами страниц от 1 до n. Написать функцию
+//todo amountOfPages, аргумент которой summary составляется путем сложения количества
+//todo цифр всех номеров страниц. Эта функция возвращает число - количество страниц n в
+//todo книге. Чтобы было понятно что такое количество цифр, давайте рассмотрим примеры.
+//todo Пример:
+//todo Если на входе функции summary = 25, то на результат должен быть 17.
+//todo Всего в числах от 1 до 17 содержится 25 цифр: 1234567891011121314151617.
+//todo Функция на вход как раз принимает это общее количество цифр, а возвращает
+//todo конечное число, то есть последнюю страницу книги.
+//todo amountOfPages(5) => 5
+//todo amountOfPages(25) => 17
+//todo amountOfPages(1095) => 401   
+//todo amountOfPages(185) => 97
 
+// function amountOfPages(summary) {
+//   let currentSum = 0;
+//   let page = 0;
+
+//   while (currentSum < summary) {
+//       page += 1;
+//       currentSum += page.toString().length;
+//   }
+
+//   return page;
+// }
+
+// console.log(amountOfPages(5));    // => 5
+// console.log(amountOfPages(25));   // => 17
+// console.log(amountOfPages(1095)); // => 401
+// console.log(amountOfPages(185));  // => 97
 
 
