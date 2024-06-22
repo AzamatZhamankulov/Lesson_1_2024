@@ -3904,3 +3904,8 @@
 // console.log(isPangram("The quick brown fox jumps over the lazy dog"));
 // console.log(isPangram("Hello world"));
 
+
+//! Practice #19: deepCount with instance of 
+// const arr = [1, 2, [3, 4, [5]]];
+// let mapArr = new Map(arr);
+// console.log(mapArr.size);
