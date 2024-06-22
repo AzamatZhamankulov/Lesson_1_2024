@@ -3861,3 +3861,46 @@
 // console.log(amountOfPages(185));  // => 97
 
 
+//! Practice # 18 Pangramms
+//todo Панграмма — это предложение, в котором каждая буква алфавита встречается хотя бы
+//todo по одному разу по возможности без повторений. Например, предложение
+//todo «The quick brown fox jumps over the lazy dog» является панграммой, поскольку
+//todo в нем хотя бы один раз используются буквы от A до Z (регистр значения не имеет).
+//todo Напишите функцию isPangram, которая принимает в себя строку и возвращает
+//todo логическое значение. Если строка является панграммой - вернется true,
+//todo если нет - false.
+//todo isPangram(«The quick brown fox jumps over the lazy dog») => true
+//todo isPangram(«Hello world») => false
+
+// const isPangram = (string) => {
+//   let lowercasedString = string.toLowerCase().replace(/\s+/g, '');
+//   let uniqueSet = new Set(lowercasedString);
+//   let sortedUniqueString = [...uniqueSet].sort().join('');
+
+//   const alphabetLetters = 'abcdefghijklmnopqrstuvwxyz';
+ 
+//   if (alphabetLetters === sortedUniqueString) {
+//     console.log('It is pangram');
+//     return true;
+//   } else {
+//     console.log('Sorry, it is not pangram tray again.');
+//     return false
+//   }
+// }
+// isPangram('The quick brown fox jumps over the lazy dog');
+
+//todo with set.add()
+// const isPangram = (string) => {
+//   const alphabetSet = new Set();
+  
+//   for (const letter of string.toLowerCase()) {
+//     if (letter >= 'a' && letter <= 'z') {
+//       alphabetSet.add(letter);
+//     }
+//   }
+//   console.log(alphabetSet)
+//   return alphabetSet.size === 26;
+// }
+// console.log(isPangram("The quick brown fox jumps over the lazy dog"));
+// console.log(isPangram("Hello world"));
+
