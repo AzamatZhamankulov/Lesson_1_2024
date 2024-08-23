@@ -3909,3 +3909,7 @@
 // const arr = [1, 2, [3, 4, [5]]];
 // let mapArr = new Map(arr);
 // console.log(mapArr.size);
+
+
+//! Lesson #70 Parameter of document, window and work with them
+
