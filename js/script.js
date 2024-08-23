@@ -3913,3 +3913,4 @@
 
 //! Lesson #70 Parameter of document, window and work with them
 
+const box2 = document.querySelector('.box2');
