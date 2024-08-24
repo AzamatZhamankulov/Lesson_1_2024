@@ -3913,4 +3913,36 @@
 
 //! Lesson #70 Parameter of document, window and work with them
 
-const box2 = document.querySelector('.box2');
+// const boxTxt = document.querySelector('.boxTxt'),
+//       btn2 = document.querySelector(".btn2");
+
+// const width = boxTxt.clientWidth; // 381
+// const height = boxTxt.clientHeight; // 331
+
+// const width = boxTxt.offsetWidth; // 400
+// const height = boxTxt.offsetHeight; // 350
+
+// const width = boxTxt.scrollWidth; // 381
+// const height = boxTxt.scrollHeight; // 1437
+
+// console.log(width, height);
+
+// btn2.addEventListener('click', () => {
+//   // boxTxt.style.height = boxTxt.scrollHeight + 'px';
+//   console.log(boxTxt.scrollTop); // height of the scrolled content
+// });
+
+// console.log(boxTxt.getBoundingClientRect()); // all coordinates of the element
+
+//todo to show computed style of the element
+// const boxStyle = window.getComputedStyle(boxTxt);
+// console.log(boxStyle); // all styles of the element and we can choose by methods
+
+//todo for all document page
+// console.log(document.documentElement.clientWidth); // for all document page
+// console.log(document.documentElement.scrollTop); // for all document page
+
+//todo scrollBy and scrollTo
+
+// window.scrollBy(0, 200); // to scroll the page from last point to 200px down
+// window.scrollTo(0, 200); // to scroll the page from head point to 200px down
