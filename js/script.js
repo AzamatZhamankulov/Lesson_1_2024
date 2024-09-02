@@ -3946,3 +3946,109 @@
 
 // window.scrollBy(0, 200); // to scroll the page from last point to 200px down
 // window.scrollTo(0, 200); // to scroll the page from head point to 200px down
+
+
+//! lesson #75 Context call This
+//todo 1) Ususal funciton: this = window, but if we will use "Use strict" => undefined
+
+// function showThis() {
+//   console.log(this);
+// }
+// showThis();
+
+//todo 1.1) function inside a function here "This" will be undefined
+
+// function showThis(a, b) {
+//   console.log(this);
+//   function sum() {
+//     console.log(this);
+//     return a + b;
+//   }
+//   console.log(sum());
+// }
+// showThis(4, 5);
+
+//todo 2) This in Objects it is self of the object
+
+// const obj = {
+//   a: 20,
+//   b: 15,
+//   sum: function() {
+//     console.log(this);
+//   }
+// };
+// obj.sum();
+
+//todo 3) This in Constructor and in Classes => it is new created object
+
+// function User(name, id) {
+//   this.name = name;
+//   this.id = id;
+//   this.human = true;
+//   this.sayHello = function() {
+//     console.log("Hello!" + this.name);
+//   };
+// }
+// let ivan = new User("Ivan", 23);
+
+// console.log(ivan);
+// ivan.sayHello();
+
+//todo 4) we can use call and apply for functions (manual binding of 'This')
+
+// function sayName(surname) {
+//   console.log(this);
+//   console.log(this.name + surname);
+// }
+
+// const user = {
+//   name: 'John',
+// };
+
+// sayName.call(user, 'Smith');
+// sayName.apply(user, ['Smith']);
+
+//todo we can use bind for manual binding the context 'This' (call, apply, bind)
+
+// function count(num) {
+//   return this*num;
+// }
+
+// const double = count.bind(2);
+// console.log(double(3));
+// console.log(double(11));
+
+//todo let's work with real example with button on the page => same e.target element
+
+// const btn = document.querySelector('.btn2');
+
+// btn.addEventListener('click', function() {
+//   console.log(this); // we will get same event.target element
+//   this.style.backgroundColor = 'red';
+// });
+
+
+// const obj = {
+//   num:5,
+//   sayNumber: function() {
+//     const say = () => {
+//       console.log(this.num); // here This is obj
+//     };
+//     say();
+//   }
+// };
+
+// obj.sayNumber();
+
+//todo anohter example with arrow function
+
+// const double = (a) => {
+//   return a * 2;
+// };
+
+//todo we can make it shorter
+
+// const tripple = (b) => b * 3;
+
+// console.log(double(4));
+// console.log(tripple(4));
