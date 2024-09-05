@@ -4052,3 +4052,42 @@
 
 // console.log(double(4));
 // console.log(tripple(4));
+
+
+//! lesson #76 Classes (ES6)
+
+// class Rectanlge {
+//   constructor(height, width) {
+//     this.height = height;
+//     this.width = width;
+//   }
+
+//   calcArea() {
+//     return this.height * this.width;
+//   }
+// }
+
+//todo Principle of the inherite of classes with extends and super (super always first)
+
+// class ColoredRectangleWithText extends Rectanlge {
+//   constructor(height, width, text, bgColor) {
+//     super(height, width);
+//     this.text = text;
+//     this.bgColor = bgColor;
+//   }
+
+//   showMyProps() {
+//     console.log(`Текст: ${this.text}, Цвет: ${this.bgColor}`);
+//   }
+// }
+
+// const square = new Rectanlge(10, 10);
+// const long = new Rectanlge(20, 100);
+
+// console.log(square.calcArea());
+// console.log(long.calcArea());
+
+// const div = new ColoredRectangleWithText(25, 10, 'My own text here', 'yellow');
+
+// div.showMyProps();
+// console.log(div.calcArea());
