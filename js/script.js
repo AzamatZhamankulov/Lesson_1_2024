@@ -1557,8 +1557,7 @@
 
 
 //! Practice exercise Objects # 1
-//todo Напишите функцию showExperience, которая будет принимать в себя объект со всеми
-//todo данными и возвращать строку с опытом showExperience(personalPlanPeter) => '1 month'
+//todo Напишите функцию showExperience, которая будет принимать в себя объект со всеми данными и возвращать строку с опытом showExperience(personalPlanPeter) => '1 month'
 
 // const personalPlanPeter = {
 //   name: "Peter",
@@ -2192,8 +2191,7 @@
 
 
 //! Copy and sort array
-//todo We have an array of strings arr. We’d like to have a sorted copy of it, but keep
-//todo arr unmodified. Create a function copySorted(arr) that returns such a copy
+//todo We have an array of strings arr. We’d like to have a sorted copy of it, but keep arr unmodified. Create a function copySorted(arr) that returns such a copy
 
 // let arrStr = ["HTML", "JavaScript", "CSS"];
 // let arrSorted =[];
@@ -4091,3 +4089,19 @@
 
 // div.showMyProps();
 // console.log(div.calcArea());
+
+
+//! lesson 79 Rest operator
+
+// const log = function(a, b, ...rest) {
+//   console.log(a, b, rest);
+// }
+
+// log('basic', 'secondary', 'other income', 'usage');
+
+// function calcOrDouble(number, basis = 2) {
+//   //basis = basis || 2;
+//   console.log(number * basis);
+// }
+
+// calcOrDouble(3, 5);
